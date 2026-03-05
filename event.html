@@ -16,189 +16,125 @@ scale=1.0">
         <a href="tampil-testimoni.html">Testimoni Pembeli</a>
         <a href="kontak.html">Kontak</a>
         <a href="event.html">Event</a>
-    </nav>
-
-   <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Event & Promo Toko Buku</title>
+<title>Event Toko Buku</title>
 
 <style>
+
 body{
+    font-family: Arial, sans-serif;
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f4f6f9;
+    background:#ffe6f0; /* soft pink */
 }
 
+/* Header */
 header{
-    background:pink;
-    background: linear-gradient(to right, pink , thistle);
-    color: black;
+    background:pink; /* pink dominan */
+    color:#5a2a4a;
+    padding:25px;
     text-align:center;
-    padding:50px 20px;
 }
 
 header h1{
     margin:0;
+    color: rgb(255, 101, 127);
 }
 
+/* Container */
 .container{
     width:90%;
-    max-width:1200px;
-    margin:40px auto;
-}
-
-.section-title{
-    margin:40px 0 20px;
-    font-size:24px;
-    border-left:5px solid palevioletred;
-    padding-left:10px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:thistle;
+    max-width:1000px;
+    margin:auto;
     padding:20px;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Card Event */
+.event{
+    background:#fff0f6; /* pink sangat lembut */
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    border-left:6px solid #d8bfd8; /* thistle */
+    box-shadow:0 4px 8px rgba(0,0,0,0.08);
+}
+
+.event h2{
+    color:#e69ac0;
+}
+
+.event p{
+    color:#555;
+}
+
+/* Button */
+.btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 18px;
+    background:#ff8fb1;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
     transition:0.3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    margin-top:0;
-}
-
-.date{
-    font-size:14px;
-    color:white;
-    margin-bottom:10px;
-}
-
-.discount{
-    color:#dc3545;
-    font-weight:bold;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:8px 15px;
-    background:palevioletred;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
-}
-
 .btn:hover{
-    background:blue;
+    background:#ff6f9f;
 }
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:15px;
+    background:#ffb6c1;
+    color:pink;
+}
+
 </style>
 </head>
+
 <body>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontak Kami</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FDEFFB;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #D8BFD8; /* Pink Thistle */
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        h2 {
-            color: #D8BFD8;
-        }
-        .alamat-toko {
-            background-color: #F8EAF8;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        form {
-            background-color: #F8EAF8;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        form label {
-            display: block;
-            margin-bottom: 5px;
-            color: #6A1B9A;
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #D8BFD8;
-            border-radius: 5px;
-        }
-        form button {
-            background-color: #D8BFD8;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        form button:hover {
-            background-color: #C1A3C1;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Kontak Kami</h1>
-    </header>
-    <main>
-        <section class="alamat-toko">
-            <h2>Alamat Toko</h2>
-            <p>Jl. Besuk, RT.11/RW.04, Besuk, Sambungrejo,
-       Kecamatan Sukodono, Kabupaten Sidoarjo,
-       Jawa Timur 61258, Indonesia</p>
-            <p>Telepon:+62 822 4169 6699</p>
-            <p>Email: tokobukuadara1@gmail.com</p>
-        </section>
 
-        <section class="form-kontak">
-            <h2>Form Kontak</h2>
-            <form action="#" method="POST">
-                <label for="nama">Nama:</label>
-                <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+<header>
+<h1>Event Toko Buku Adara Haibah Z</h1>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Email Anda" required>
+</header>
 
-                <label for="pesan">Pesan:</label>
-                <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda" required></textarea>
+<div class="container">
 
-                <button type="submit">Kirim</button>
-            </form>
-        </section>
-    </main>
+<div class="event">
+<h2>Bedah Buku Novel</h2>
+<p><b>Tanggal:</b> 20 April 2026</p>
+<p><b>Waktu:</b> 09.00-11.00</p>
+<p>Ikuti Bedah Buku Novel di Toko Buku Adara dan temukan makna menarik di balik sebuah cerita.</p>
+<a href="#" class="btn">Daftar</a>
+</div>
+
+<div class="event">
+<h2>Workshop Menulis</h2>
+<p><b>Tanggal:</b> 5 Mei 2026</p>
+<p><b>Waktu:</b> 08.00-15.00</p>
+<p>Belajar teknik menulis cerita yang menarik.</p>
+<a href="#" class="btn">Daftar</a>
+</div>
+
+<div class="event">
+<h2>Festival Buku Adara</h2>
+<p><b>Tanggal:</b> 12 Mei 2026</p>
+<p><b>Waktu:</b> 08.00-14.03</p>
+<p>Diskon buku dan banyak kegiatan menarik.</p>
+<a href="#" class="btn">Lihat Detail</a>
+</div>
+
+</div>
+
+<footer>
+© 2026 Toko Buku Pink Stories
+</footer>
+
 </body>
 </html>
