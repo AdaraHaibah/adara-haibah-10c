@@ -2,32 +2,215 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-
-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Buku Adara Haibah</title>
 
-<title>Profil Usaha Buku</title>
-<link rel="stylesheet" href="style.css" />
+<style>
+
+body{
+margin:0;
+font-family: 'Poppins', sans-serif;
+background:#ffe6f0;
+color:#333;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+font-size:17px;
+position:relative;
+transition:0.3s;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+left:0;
+bottom:-5px;
+background:white;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+nav a:hover{
+transform:scale(1.1);
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:50px 20px;
+}
+
+.hero img{
+width:250px;
+animation:float 3s ease-in-out infinite;
+}
+
+/* ANIMATION */
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+.hero h1{
+color:#ff4fa3;
+font-size:36px;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+font-size:18px;
+}
+
+/* KATEGORI */
+
+.section{
+padding:40px;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.card{
+background:#fff0f6;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+border:2px solid #f8c8dc;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:80px;
+margin-bottom:10px;
+transition:0.3s;
+}
+
+.card:hover img{
+transform:rotate(10deg) scale(1.1);
+}
+
+.card h3{
+color:#ff5cad;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#ff9ecf;
+color:white;
+margin-top:40px;
+}
+
+</style>
+
 </head>
 <body>
-    <nav> <a href="index.html">Beranda</a>
-        <a href="produk.html">Produk</a>
-        <a href="bedah-buku.html">Bedah Buku</a>
-        <a href="testimoni.html">Testimoni</a>
-        <a href="tampil-testimoni.html">Testimoni Pembeli</a>
 
-    </nav>
+<!-- NAVBAR -->
+
+<nav>
+<a href="index.html">Beranda</a>
+<a href="produk.html">Produk</a>
+<a href="bedah-buku.html">Bedah Buku</a>
+<a href="testimoni.html">Testimoni</a>
+<a href="tampil-testimoni.html">Testimoni Pembeli</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img src="https://cdn-icons-png.flaticon.com/512/29/29302.png">
+
 <h1>Selamat Datang di Toko Buku Adara Haibah</h1>
-<p>Website ini berisi informasi tentang produk buku, bedah
-buku, dan testimoni pelanggan.</p>
-<h2>Jenis-Jenis Buku yang Kami Jual </h2>
-<p>Kami menyediakan jenis buku yang cocok untuk semua kalangan, mulai anak-anak hingga orang dewasa. Berikut beberapa kategori utama yang tersedia di Toko Buku Adara Haibah Z: </p>
-<ul>
-    <li><strong> Buku Pelajaran Sekolah:</strong>Matematika, Bahasa indonesia, IPA, IPS, dan lainnya untuk tingat SD, SMP, hingga SMA</li>
-    <li><strong> Novel Fiksi:</strong>Novel Remaja, Cerita Cinta, Fiksi Ilmiah, dan Misteri dari penulis lokal maupun international.</li>
-    <li><strong> Buku Motivasi dan Pengembangan diri:</strong>Buku-buku inspiratif seperti "Atomic Habits", "Berani Tidak Disukai", dan lainnya</li>
-    <li> <strong> Buku Anak-Anak:</strong> Buku cerita bergambar, buku aktivitas, dan edukasi dini seperti = "Belajar Huruf & Angka".</li>
-    <li> <strong>Buku Referensi Umum:</strong> Ensiklopedia, kamus, buku pengetahuan umum, dan buku-buku hobi seperti memasak atau berkebun.</li>
+
+<p>
+Website ini berisi informasi tentang produk buku, bedah buku,
+dan testimoni pelanggan.
+</p>
+
+</section>
+
+<!-- KATEGORI -->
+
+<section class="section">
+
+<h2>Jenis-Jenis Buku yang Kami Jual</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+<h3>Buku Pelajaran</h3>
+<p>Matematika, Bahasa Indonesia, IPA, IPS untuk SD hingga SMA.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
+<h3>Novel Fiksi</h3>
+<p>Novel remaja, romance, misteri, dan fiksi ilmiah.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+<h3>Buku Motivasi</h3>
+<p>Buku inspiratif seperti Atomic Habits dan lainnya.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2702/2702134.png">
+<h3>Buku Anak</h3>
+<p>Buku cerita bergambar dan edukasi anak.</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2436/2436874.png">
+<h3>Buku Referensi</h3>
+<p>Ensiklopedia, kamus, buku pengetahuan umum.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Toko Buku Adara Haibah
+</footer>
 
 </body>
 </html>
-
