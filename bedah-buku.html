@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Profil Usaha Buku</title>
 <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<nav> <a href="index.html">Beranda</a>
-<a href="produk.html">Produk</a>
-<a href="bedah-buku.html">Bedah Buku</a>
-<a href="testimoni.html">Testimoni</a>
-<a href="tampil-testimoni.html">Testimoni Pembeli</a>
-<a href="kontak.html">Kontak</a>
-<a href="event.html">Event</a>
-</nav>
- 
- <style>
-    /* NAVBAR */
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+background:#ffe6f0;
+color:#333;
+}
+
+/* NAVBAR */
 
 nav{
 display:flex;
@@ -27,13 +25,7 @@ gap:30px;
 background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
 padding:15px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
-position:sticky;
-top:0;
-z-index:1000;
-animation:slideDown 0.7s ease;
 }
-
-/* menu */
 
 nav a{
 text-decoration:none;
@@ -42,10 +34,7 @@ font-weight:bold;
 font-size:17px;
 position:relative;
 transition:0.3s;
-padding:5px;
 }
-
-/* garis animasi */
 
 nav a::after{
 content:"";
@@ -62,18 +51,121 @@ nav a:hover::after{
 width:100%;
 }
 
-/* efek hover */
-
 nav a:hover{
 transform:scale(1.1);
 }
 
-/* animasi muncul navbar */
+/* JUDUL HALAMAN */
 
-@keyframes slideDown{
+.judul{
+text-align:center;
+margin-top:40px;
+font-size:34px;
+color:#ff4fa3;
+}
+
+/* GRID PRODUK */
+
+.daftar-produk{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+padding:40px;
+max-width:1100px;
+margin:auto;
+}
+
+/* CARD PRODUK */
+
+.produk{
+background:#fff0f6;
+padding:20px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+border:2px solid #f8c8dc;
+transition:0.3s;
+animation:muncul 0.8s ease;
+}
+
+/* ANIMASI HOVER */
+
+.produk:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* GAMBAR BUKU */
+
+.produk img{
+border-radius:10px;
+margin-bottom:10px;
+transition:0.3s;
+}
+
+.produk:hover img{
+transform:scale(1.08) rotate(2deg);
+}
+
+/* JUDUL BUKU */
+
+.produk h2{
+font-size:18px;
+color:#ff5cad;
+}
+
+/* HARGA */
+
+.harga{
+font-weight:bold;
+color:#444;
+margin:6px 0;
+}
+
+/* DESKRIPSI */
+
+.deskripsi{
+font-size:14px;
+line-height:1.5;
+}
+
+/* LINK KEMBALI */
+
+.kembali{
+text-align:center;
+margin-bottom:30px;
+}
+
+.kembali a{
+text-decoration:none;
+background:#ff9ecf;
+color:white;
+padding:10px 20px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.kembali a:hover{
+background:#ff7fbf;
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#ff9ecf;
+color:white;
+margin-top:40px;
+}
+
+/* ANIMASI MUNCUL */
+
+@keyframes muncul{
 from{
 opacity:0;
-transform:translateY(-20px);
+transform:translateY(30px);
 }
 to{
 opacity:1;
@@ -81,93 +173,89 @@ transform:translateY(0);
 }
 }
 
-     </style>   
-<h1>Toko Buku Adara Haibah Z</h1>
+</style>
 
-<section class="daftar-produk"> 
-<main class="artikel">
-    <h2>Bedah Buku: Negeri 5 Menara</h2>
-    <p class="penulis">Ditulis oleh: Ahmad Fuadi</p>
-    <img src="buku8.jpg 5 menara.jpg" alt="Sampul Negeri 5 Menara" class="sampul">
-    <p>
-        Buku ini menceritakan perjalanan hidup Alif, seprang anak Minang yang menempuh pendidikan di pondok pesantren Madani.
-        Awalnya penuh keraguan, namun perlahan Alif menemukan makna perjuangan, persahabatan, dan kekuatan impian 
-    </p>
+</head>
 
-    <blockquote> 
+<body>
 
-        "Man Jadda Wajada - Siapa yang bersungguh-sungguh, dia akan berhasil."
-    </blockquote>
+<nav> 
+<a href="index.html">Beranda</a>
+<a href="produk.html">Produk</a>
+<a href="bedah-buku.html">Bedah Buku</a>
+<a href="testimoni.html">Testimoni</a>
+<a href="tampil-testimoni.html">Testimoni Pembeli</a>
+<a href="kontak.html">Kontak</a>
+<a href="event.html">Event</a>
+</nav>
 
-<p>
-    Kalimat itu menjadi semanat utama dalam buku ini. Kisah ini ditulis berdasarkan pengalaman nyata ini sangat menginspirasi, terutama bagi pelajar yang sedang mengejar mimpi mereka. Penulis berhasil menyampaikan pesan-pesan moral melalui narasi yang hidup.
+<h1 class="judul">Daftar Produk Buku</h1>
+
+<section class="daftar-produk">
+
+<div class="produk">
+<img src="buku3.jpg" alt="dompet" width="150">
+<h2>Novel Dompet Ayah Sepatu Ibu</h2>
+<p class="harga">Rp99.000</p>
+<p class="deskripsi">
+Kisah keluarga sederhana yang menyentuh tentang pengorbanan orang tua, kasih sayang tanpa syarat, dan perjuangan ekonomi demi kebahagiaan anak-anaknya.
 </p>
+</div>
 
-<p> 
-    Buku ini cocok dibaca oleh remaja dan orang dewasa yang sedang mencari motivasi hidup. Cerita persahabatan, perjuangan, dan cinta belajar membuatnya menyentuh dan relevan bagi pembaca di berbagai usia
+<div class="produk">
+<img src="buku1.jpg" alt="home" width="150">
+<h2>Novel Home Sweet Loan</h2>
+<p class="harga">Rp99.000</p>
+<p class="deskripsi">
+Novel ini menggambarkan realita generasi muda di kota besar yang bergulat dengan KPR, utang, dan tuntutan hidup modern.
 </p>
-</main>
+</div>
+
+<div class="produk">
+<img src="buku2.jpg" alt="bungkamsuara" width="150">
+<h2>Novel Bungkam Suara</h2>
+<p class="harga">Rp99.000</p>
+<p class="deskripsi">
+Novel karya J.S. Khairen tentang kebebasan berbicara dan perlawanan terhadap kekuasaan yang menindas.
+</p>
+</div>
+
+<div class="produk">
+<img src="buku7.jpg" alt="aqidah" width="150">
+<h2>Syarh Aqidah Washitiyyah</h2>
+<p class="harga">Rp259.000</p>
+<p class="deskripsi">
+Pengantar ilmu akidah Islam yang menjelaskan dasar keimanan berdasarkan Al-Qur'an dan Sunnah.
+</p>
+</div>
+
+<div class="produk">
+<img src="buku9.jpg" alt="janji" width="150">
+<h2>Janji - Tere Liye</h2>
+<p class="harga">Rp99.000</p>
+<p class="deskripsi">
+Cerita tentang tiga sahabat yang diuji oleh janji di masa lalu.
+</p>
+</div>
+
+<div class="produk">
+<img src="buku11.jpg" alt="beranitidakdisukai" width="150">
+<h2>Berani Tidak Disukai</h2>
+<p class="harga">Rp89.000</p>
+<p class="deskripsi">
+Buku pengembangan diri tentang keberanian menjadi diri sendiri tanpa takut penilaian orang lain.
+</p>
+</div>
+
 </section>
 
-<section class="daftar-produk"> 
-<main class="artikel">
-    <h2>Bedah Buku: Novel Janji Tere Liye</h2>
-    <p class="penulis">Ditulis oleh: M. Darwis</p>
-    <img src="buku9.jpg" alt="Sampul Janji" class="sampul">
+<div class="kembali">
+<a href="index.html">Kembali ke Beranda</a>
+</div>
 
-    <p>
-        Buku ini menceritakan perjalanan hidup tiga sahabat pesantren—Hasan, Kahar, dan Baso— yang tumbuh bersama dalam lingkungan sederhana namun penuh nilai kehidupan. Di pesantren, mereka belajar tentang ilmu agama, persahabatan, dan arti sebuah janji. Waktu kemudian membawa mereka ke jalan hidup yang berbeda, dengan berbagai ujian dan pilihan yang tidak mudah.
-    </p>
-
-    <blockquote> 
-
-        "Kadang kita ingin mengingkari janji karena takut gagal atau lelah menanggung konsekuensinya. Tapi sesungguhnya, janji adalah cermin diri—sejauh mana kita mampu memegang kata-kata dan menjadi orang yang pantas dipercaya."
-    </blockquote>
-
-<p>
-    Kisah ini menggambarkan bagaimana janji yang pernah diucapkan diuji oleh ambisi, kekuasaan, dan realitas hidup. Dengan bahasa yang sederhana namun menyentuh, penulis berhasil menyampaikan pesan moral tentang kejujuran, tanggung jawab, dan integritas diri.
-</p>
-
-<p> 
-    Buku ini cocok dibaca oleh remaja maupun orang dewasa karena ceritanya dekat dengan kehidupan nyata. Kisah persahabatan dan perjuangan hidup yang disajikan membuat novel ini inspiratif dan sarat makna.
-</p>
-</main>
-</section>
-
-<section class="daftar-produk"> 
-<main class="artikel">
-    <h2>Bedah Buku: Novel Bungkam Suara</h2>
-    <p class="penulis">Ditulis oleh: J.S. KHAIREN</p>
-    <img src="buku2.jpg" alt="Sampul Bungkam Suara" class="sampul">
-
-    <p>
-       Buku ini menceritakan tentang perjuangan melawan ketidakadilan dan kekuasaan yang menindas, di mana kebenaran sering kali dibungkam demi kepentingan tertentu. Tokoh-tokohnya dihadapkan pada pilihan sulit antara berani bersuara atau diam demi keselamatan diri.
-    </p>
-
-    <blockquote> 
-
-        "Diam sering kali dipilih demi rasa aman, namun ketika ketidakadilan terus dibiarkan, diam berubah menjadi bentuk persetujuan. Pada titik itulah keberanian bukan lagi pilihan, melainkan kewajiban moral."
-    </blockquote>
-
-<p>
-   Melalui alur cerita yang tegang dan emosional, penulis menggambarkan bagaimana keberanian, nurani, dan kejujuran diuji dalam situasi yang penuh tekanan. Dengan gaya bahasa yang lugas dan kuat, pesan moral tentang pentingnya membela kebenaran tersampaikan dengan jelas.
-</p>
-
-<p> 
-  Buku ini cocok dibaca oleh remaja dan orang dewasa karena mengajak pembaca untuk peka terhadap isu sosial, keadilan, dan keberanian moral. Ceritanya relevan dengan kehidupan nyata dan memberikan refleksi mendalam tentang arti bersuara demi kebenaran.
-</p>
-<a href="produk.html" class="btn-kembali">Kembali ke Katalog</a>
-</main>
-</section>
-
-<footer> 
-    <p>&copy; 2026 Toko Buku Adara Haibah Z </p>
-   </footer>
+<footer>
+<p>&copy; 2026 Toko Buku Adara Haibah</p>
+</footer>
 
 </body>
 </html>
-
-
-
-
-
