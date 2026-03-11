@@ -1,161 +1,242 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daftar Produk Buku - Toko Buku Adara Haibah</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 /* BODY */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #ffe6f0;
-  color: #333;
+body{
+  font-family:'Poppins', sans-serif;
+  background:#ffe6f0;
+  color:#333;
 }
 
 /* NAVBAR */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  background: linear-gradient(90deg, #ff9ecf, #d8bfd8);
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 95%;
-  transition: 0.3s;
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
+  padding:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  animation:navMasuk 0.8s ease;
 }
 
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 17px;
-  position: relative;
-  transition: 0.3s;
+nav a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  font-size:17px;
+  position:relative;
+  transition:0.3s;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -5px;
-  background: white;
-  transition: 0.3s;
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  left:0;
+  bottom:-5px;
+  background:white;
+  transition:0.3s;
 }
 
-nav a:hover::after {
-  width: 100%;
+nav a:hover::after{
+  width:100%;
 }
 
-nav a:hover {
-  transform: scale(1.1);
-  color: #fffde7;
+nav a:hover{
+  transform:scale(1.1);
+  color:#fffde7;
 }
 
 /* JUDUL HALAMAN */
-.judul {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 34px;
-  color: #ff4fa3;
+.judul{
+  text-align:center;
+  margin-top:40px;
+  font-size:34px;
+  color:#ff4fa3;
+  animation:judulMasuk 1s ease;
 }
 
 /* GRID PRODUK */
-.daftar-produk {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-  gap: 25px;
-  padding: 40px;
-  max-width: 1100px;
-  margin: auto;
+.daftar-produk{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+  gap:25px;
+  padding:40px;
+  max-width:1100px;
+  margin:auto;
 }
 
 /* CARD PRODUK */
-.produk {
-  background: #fff0f6;
-  padding: 20px;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  border: 2px solid #f8c8dc;
-  transition: 0.3s;
-  animation: muncul 0.8s ease;
+.produk{
+  background:#fff0f6;
+  padding:20px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 6px 15px rgba(0,0,0,0.08);
+  border:2px solid #f8c8dc;
+  transition:0.3s;
+  opacity:0;
+  transform:translateY(30px);
+  animation:muncul 0.8s ease forwards;
 }
+
+.produk:nth-child(1){ animation-delay:0.2s; }
+.produk:nth-child(2){ animation-delay:0.4s; }
+.produk:nth-child(3){ animation-delay:0.6s; }
+.produk:nth-child(4){ animation-delay:0.8s; }
+.produk:nth-child(5){ animation-delay:1s; }
+.produk:nth-child(6){ animation-delay:1.2s; }
 
 /* HOVER CARD */
-.produk:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+.produk:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
-.produk img {
-  border-radius: 10px;
-  margin-bottom: 10px;
-  transition: 0.3s;
+.produk img{
+  border-radius:10px;
+  margin-bottom:10px;
+  transition:0.3s;
+  max-width:100%;
+  height:auto;
 }
 
-.produk:hover img {
-  transform: scale(1.08) rotate(2deg);
+.produk:hover img{
+  transform:scale(1.08) rotate(2deg);
 }
 
 /* JUDUL BUKU */
-.produk h2 {
-  font-size: 18px;
-  color: #ff5cad;
+.produk h2{
+  font-size:18px;
+  color:#ff5cad;
+  margin-bottom:8px;
 }
 
 /* HARGA */
-.harga {
-  font-weight: bold;
-  color: #444;
-  margin: 6px 0;
+.harga{
+  font-weight:bold;
+  color:#444;
+  margin:6px 0;
 }
 
 /* DESKRIPSI */
-.deskripsi {
-  font-size: 14px;
-  line-height: 1.5;
+.deskripsi{
+  font-size:14px;
+  line-height:1.5;
 }
 
 /* LINK KEMBALI */
-p a {
-  text-decoration: none;
-  background: #ff9ecf;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  transition: 0.3s;
+.kembali{
+  text-align:center;
+  margin-top:10px;
 }
 
-p a:hover {
-  background: #ff7fbf;
-  transform: scale(1.05);
+.kembali a{
+  display:inline-block;
+  text-decoration:none;
+  background:#ff9ecf;
+  color:white;
+  padding:10px 20px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.kembali a:hover{
+  background:#ff7fbf;
+  transform:scale(1.05);
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #ff9ecf;
-  color: white;
-  margin-top: 40px;
+footer{
+  text-align:center;
+  padding:20px;
+  background:#ff9ecf;
+  color:white;
+  margin-top:40px;
+  animation:footerMasuk 1.2s ease;
 }
 
-/* ANIMASI MUNCUL */
-@keyframes muncul {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* ANIMASI */
+@keyframes navMasuk{
+  from{
+    opacity:0;
+    transform:translateY(-50px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes judulMasuk{
+  from{
+    opacity:0;
+    transform:translateY(-25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes muncul{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes footerMasuk{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+  nav{
+    gap:15px;
+    padding:12px;
+  }
+
+  nav a{
+    font-size:15px;
+  }
+
+  .judul{
+    font-size:28px;
+    margin-top:30px;
+    padding:0 15px;
+  }
+
+  .daftar-produk{
+    padding:20px;
   }
 }
 </style>
@@ -236,7 +317,7 @@ footer {
 
 </section>
 
-<p style="text-align:center;">
+<p class="kembali">
   <a href="index.html">Kembali ke Beranda</a>
 </p>
 
