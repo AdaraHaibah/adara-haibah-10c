@@ -4,252 +4,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profil Usaha Buku</title>
-<link rel="stylesheet" href="style.css" />
+<title>Daftar Produk Buku - Toko Buku Adara Haibah</title>
 
-  
 <style>
-/* JUDUL HALAMAN */
+/* BODY */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffe6f0;
+  color: #333;
+}
 
-.judul{
-text-align:center;
-margin-top:40px;
-font-size:34px;
-color:#ff4fa3;
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: linear-gradient(90deg, #ff9ecf, #d8bfd8);
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 95%;
+  transition: 0.3s;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: white;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  color: #fffde7;
+}
+
+/* JUDUL HALAMAN */
+.judul {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 34px;
+  color: #ff4fa3;
 }
 
 /* GRID PRODUK */
-
-.daftar-produk{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
-padding:40px;
-max-width:1100px;
-margin:auto;
+.daftar-produk {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 /* CARD PRODUK */
-
-.produk{
-background:#fff0f6;
-padding:20px;
-border-radius:18px;
-text-align:center;
-box-shadow:0 6px 15px rgba(0,0,0,0.08);
-border:2px solid #f8c8dc;
-transition:0.3s;
-animation:muncul 0.8s ease;
+.produk {
+  background: #fff0f6;
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  border: 2px solid #f8c8dc;
+  transition: 0.3s;
+  animation: muncul 0.8s ease;
 }
 
-/* ANIMASI HOVER */
-
-.produk:hover{
-transform:translateY(-8px) scale(1.03);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+/* HOVER CARD */
+.produk:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* GAMBAR BUKU */
-
-.produk img{
-border-radius:10px;
-margin-bottom:10px;
-transition:0.3s;
+.produk img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
 }
 
-.produk:hover img{
-transform:scale(1.08) rotate(2deg);
+.produk:hover img {
+  transform: scale(1.08) rotate(2deg);
 }
 
 /* JUDUL BUKU */
-
-.produk h2{
-font-size:18px;
-color:#ff5cad;
+.produk h2 {
+  font-size: 18px;
+  color: #ff5cad;
 }
 
 /* HARGA */
-
-.harga{
-font-weight:bold;
-color:#444;
-margin:6px 0;
+.harga {
+  font-weight: bold;
+  color: #444;
+  margin: 6px 0;
 }
 
 /* DESKRIPSI */
-
-.deskripsi{
-font-size:14px;
-line-height:1.5;
+.deskripsi {
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 /* LINK KEMBALI */
-
-p a{
-text-decoration:none;
-background:#ff9ecf;
-color:white;
-padding:10px 20px;
-border-radius:20px;
-transition:0.3s;
+p a {
+  text-decoration: none;
+  background: #ff9ecf;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
-p a:hover{
-background:#ff7fbf;
-transform:scale(1.05);
+p a:hover {
+  background: #ff7fbf;
+  transform: scale(1.05);
 }
 
 /* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-background:#ff9ecf;
-color:white;
-margin-top:40px;
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ff9ecf;
+  color: white;
+  margin-top: 40px;
 }
 
 /* ANIMASI MUNCUL */
-
-@keyframes muncul{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:center;
-gap:30px;
-background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
-padding:15px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-nav a{
-text-decoration:none;
-color:white;
-font-weight:bold;
-font-size:17px;
-position:relative;
-transition:0.3s;
-}
-
-nav a::after{
-content:"";
-position:absolute;
-width:0%;
-height:2px;
-left:0;
-bottom:-5px;
-background:white;
-transition:0.3s;
-}
-
-nav a:hover::after{
-width:100%;
-}
-
-nav a:hover{
-transform:scale(1.1);
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
 </head>
 
-
 <body>
 
+<!-- NAVBAR -->
 <nav> 
-<a href="index.html">Beranda</a>
-<a href="produk.html">Produk</a>
-<a href="bedah-buku.html">Bedah Buku</a>
-<a href="testimoni.html">Testimoni</a>
-<a href="tampil-testimoni.html">Testimoni Pembeli</a>
-<a href="kontak.html">Kontak</a>
-<a href="event.html">Event</a>
+  <a href="index.html">Beranda</a>
+  <a href="produk.html">Produk</a>
+  <a href="bedah-buku.html">Bedah Buku</a>
+  <a href="testimoni.html">Testimoni</a>
+  <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+  <a href="kontak.html">Kontak</a>
+  <a href="event.html">Event</a>
 </nav>
 
+<!-- JUDUL HALAMAN -->
 <h1 class="judul">Daftar Produk Buku</h1>
 
+<!-- DAFTAR PRODUK -->
 <section class="daftar-produk">
 
 <div class="produk">
-<img src="buku3.jpg" alt="dompet" width="150">
-<h2>Novel Dompet Ayah Sepatu Ibu</h2>
-<p class="harga">Rp99.000</p>
-<p class="deskripsi">
-Kisah keluarga sederhana yang menyentuh tentang pengorbanan orang tua, kasih sayang tanpa syarat, dan perjuangan ekonomi demi kebahagiaan anak-anaknya.
-</p>
+  <img src="buku3.jpg" alt="dompet" width="150">
+  <h2>Novel Dompet Ayah Sepatu Ibu</h2>
+  <p class="harga">Rp99.000</p>
+  <p class="deskripsi">
+    Kisah keluarga sederhana yang menyentuh tentang pengorbanan orang tua, kasih sayang tanpa syarat, dan perjuangan ekonomi demi kebahagiaan anak-anaknya.
+  </p>
 </div>
 
 <div class="produk">
-<img src="buku1.jpg" alt="home" width="150">
-<h2>Novel Home Sweet Loan</h2>
-<p class="harga">Rp99.000</p>
-<p class="deskripsi">
-Novel ini menggambarkan realita generasi muda di kota besar yang bergulat dengan KPR, utang, dan tuntutan hidup modern.
-</p>
+  <img src="buku1.jpg" alt="home" width="150">
+  <h2>Novel Home Sweet Loan</h2>
+  <p class="harga">Rp99.000</p>
+  <p class="deskripsi">
+    Novel ini menggambarkan realita generasi muda di kota besar yang bergulat dengan KPR, utang, dan tuntutan hidup modern.
+  </p>
 </div>
 
 <div class="produk">
-<img src="buku2.jpg" alt="bungkamsuara" width="150">
-<h2>Novel Bungkam Suara</h2>
-<p class="harga">Rp99.000</p>
-<p class="deskripsi">
-Novel karya J.S. Khairen tentang kebebasan berbicara dan perlawanan terhadap kekuasaan yang menindas.
-</p>
+  <img src="buku2.jpg" alt="bungkamsuara" width="150">
+  <h2>Novel Bungkam Suara</h2>
+  <p class="harga">Rp99.000</p>
+  <p class="deskripsi">
+    Novel karya J.S. Khairen tentang kebebasan berbicara dan perlawanan terhadap kekuasaan yang menindas.
+  </p>
 </div>
 
 <div class="produk">
-<img src="buku7.jpg" alt="aqidah" width="150">
-<h2>Syarh Aqidah Washitiyyah</h2>
-<p class="harga">Rp259.000</p>
-<p class="deskripsi">
-Pengantar ilmu akidah Islam yang menjelaskan dasar keimanan berdasarkan Al-Qur'an dan Sunnah.
-</p>
+  <img src="buku7.jpg" alt="aqidah" width="150">
+  <h2>Syarh Aqidah Washitiyyah</h2>
+  <p class="harga">Rp259.000</p>
+  <p class="deskripsi">
+    Pengantar ilmu akidah Islam yang menjelaskan dasar keimanan berdasarkan Al-Qur'an dan Sunnah.
+  </p>
 </div>
 
 <div class="produk">
-<img src="buku9.jpg" alt="janji" width="150">
-<h2>Janji - Tere Liye</h2>
-<p class="harga">Rp99.000</p>
-<p class="deskripsi">
-Cerita tentang tiga sahabat yang diuji oleh janji di masa lalu.
-</p>
+  <img src="buku9.jpg" alt="janji" width="150">
+  <h2>Janji - Tere Liye</h2>
+  <p class="harga">Rp99.000</p>
+  <p class="deskripsi">
+    Cerita tentang tiga sahabat yang diuji oleh janji di masa lalu.
+  </p>
 </div>
 
 <div class="produk">
-<img src="buku11.jpg" alt="beranitidakdisukai" width="150">
-<h2>Berani Tidak Disukai</h2>
-<p class="harga">Rp89.000</p>
-<p class="deskripsi">
-Buku pengembangan diri tentang keberanian menjadi diri sendiri tanpa takut penilaian orang lain.
-</p>
+  <img src="buku11.jpg" alt="beranitidakdisukai" width="150">
+  <h2>Berani Tidak Disukai</h2>
+  <p class="harga">Rp89.000</p>
+  <p class="deskripsi">
+    Buku pengembangan diri tentang keberanian menjadi diri sendiri tanpa takut penilaian orang lain.
+  </p>
 </div>
 
 </section>
 
 <p style="text-align:center;">
-<a href="index.html">Kembali ke Beranda</a>
+  <a href="index.html">Kembali ke Beranda</a>
 </p>
 
+<!-- FOOTER -->
 <footer>
 <p>&copy; 2026 Toko Buku Adara Haibah</p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
