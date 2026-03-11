@@ -88,3 +88,51 @@ Buku pengembangan diri tentang keberanian menjadi diri sendiri tanpa takut penil
 
 </body>
 </html>
+
+<style>
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+font-size:17px;
+position:relative;
+transition:0.3s;
+}
+
+/* garis animasi bawah */
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+left:0;
+bottom:-5px;
+background:white;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* animasi hover */
+
+nav a:hover{
+transform:scale(1.1);
+}
+</style>
