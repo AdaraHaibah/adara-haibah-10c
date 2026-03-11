@@ -4,131 +4,259 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bedah Buku - Toko Buku Adara Haibah</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #ffe6f0;
-    color: #333;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#ffe6f0;
+    color:#333;
 }
 
 /* NAVBAR */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    background: linear-gradient(90deg, #ff9ecf, #d8bfd8);
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 17px;
-    position: relative;
-    transition: 0.3s;
-}
-nav a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    left: 0;
-    bottom: -5px;
-    background: white;
-    transition: 0.3s;
-}
-nav a:hover::after { width: 100%; }
-nav a:hover { transform: scale(1.1); }
-
-/* Judul halaman */
-h1 {
-    text-align: center;
-    color: #ff4fa3;
-    margin: 30px 0 20px 0;
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    background:linear-gradient(90deg, #ff9ecf, #d8bfd8);
+    padding:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    animation:navMasuk 0.8s ease;
 }
 
-/* Card artikel */
-.daftar-produk {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 20px;
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    font-size:17px;
+    position:relative;
+    transition:0.3s;
 }
 
-.artikel {
-    background: #fff0f6;
-    max-width: 800px;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    border: 2px solid #f8c8dc;
-    animation: muncul 0.8s ease;
-    transition: transform 0.3s;
-}
-.artikel:hover { transform: translateY(-5px) scale(1.02); }
-
-/* Judul & penulis */
-.artikel h2 { color: #ff5cad; }
-.penulis { font-style: italic; color: #666; margin-bottom: 10px; }
-
-/* Gambar buku */
-.sampul {
-    width: 200px;
-    display: block;
-    margin: 15px auto;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-.sampul:hover { transform: scale(1.08) rotate(2deg); }
-
-/* Blockquote lucu */
-blockquote {
-    background: #ffd9ec;
-    padding: 15px;
-    border-left: 5px solid #ff5cad;
-    font-style: italic;
-    border-radius: 8px;
-    margin: 15px 0;
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:white;
+    transition:0.3s;
 }
 
-/* Tombol kembali */
-.btn-kembali {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 18px;
-    background: #ff9ecf;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-.btn-kembali:hover { background: #ff7fbf; transform: scale(1.05); }
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #ff9ecf;
-    color: white;
-    margin-top: 40px;
+nav a:hover::after{
+    width:100%;
 }
 
-/* Animasi muncul */
-@keyframes muncul {
-    from { opacity:0; transform: translateY(30px); }
-    to { opacity:1; transform: translateY(0); }
+nav a:hover{
+    transform:scale(1.1);
+}
+
+/* JUDUL HALAMAN */
+h1{
+    text-align:center;
+    color:#ff4fa3;
+    margin:30px 0 20px 0;
+    animation:judulMasuk 1s ease;
+}
+
+/* WRAPPER ARTIKEL */
+.daftar-produk{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+    padding:20px;
+}
+
+/* CARD ARTIKEL */
+.artikel{
+    background:#fff0f6;
+    width:100%;
+    max-width:800px;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+    border:2px solid #f8c8dc;
+    transition:0.3s;
+    opacity:0;
+    transform:translateY(35px);
+    animation:kartuMasuk 0.8s ease forwards;
+}
+
+.artikel:nth-child(1){ animation-delay:0.2s; }
+.artikel:nth-child(2){ animation-delay:0.5s; }
+.artikel:nth-child(3){ animation-delay:0.8s; }
+
+.artikel:hover{
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* JUDUL & PENULIS */
+.artikel h2{
+    color:#ff5cad;
+    margin-bottom:8px;
+}
+
+.penulis{
+    font-style:italic;
+    color:#666;
+    margin-bottom:10px;
+}
+
+/* GAMBAR */
+.sampul{
+    width:200px;
+    max-width:100%;
+    display:block;
+    margin:15px auto;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.sampul:hover{
+    transform:scale(1.08) rotate(2deg);
+}
+
+/* TEKS */
+.artikel p{
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+/* BLOCKQUOTE */
+blockquote{
+    background:#ffd9ec;
+    padding:15px;
+    border-left:5px solid #ff5cad;
+    font-style:italic;
+    border-radius:8px;
+    margin:15px 0;
+    animation:kutipanMasuk 1.1s ease;
+}
+
+/* TOMBOL */
+.btn-kembali{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#ff9ecf;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
+    transition:0.3s;
+    font-weight:600;
+}
+
+.btn-kembali:hover{
+    background:#ff7fbf;
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#ff9ecf;
+    color:white;
+    margin-top:40px;
+    animation:footerMasuk 1.2s ease;
+}
+
+/* ANIMASI */
+@keyframes navMasuk{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes judulMasuk{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes kartuMasuk{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes kutipanMasuk{
+    from{
+        opacity:0;
+        transform:scale(0.95);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes footerMasuk{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+    nav{
+        gap:15px;
+        padding:12px;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+
+    h1{
+        font-size:28px;
+        padding:0 15px;
+    }
+
+    .daftar-produk{
+        padding:15px;
+    }
+
+    .artikel{
+        padding:20px;
+    }
 }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
 <a href="index.html">Beranda</a>
 <a href="produk.html">Produk</a>
@@ -141,38 +269,36 @@ footer {
 
 <h1>Toko Buku Adara Haibah Z</h1>
 
-<section class="daftar-produk"> 
-<main class="artikel">
+<div class="daftar-produk">
+
+<article class="artikel">
 <h2>Bedah Buku: Negeri 5 Menara</h2>
 <p class="penulis">Ditulis oleh: Ahmad Fuadi</p>
 <img src="buku8.jpg" alt="Sampul Negeri 5 Menara" class="sampul">
 <p>Buku ini menceritakan perjalanan hidup Alif, seorang anak Minang yang menempuh pendidikan di pondok pesantren Madani. Awalnya penuh keraguan, namun perlahan Alif menemukan makna perjuangan, persahabatan, dan kekuatan impian.</p>
 <blockquote>"Man Jadda Wajada - Siapa yang bersungguh-sungguh, dia akan berhasil."</blockquote>
 <p>Kalimat itu menjadi semangat utama dalam buku ini dan sangat menginspirasi pelajar yang sedang mengejar mimpi.</p>
-</main>
-</section>
+</article>
 
-<section class="daftar-produk"> 
-<main class="artikel">
+<article class="artikel">
 <h2>Bedah Buku: Novel Janji Tere Liye</h2>
 <p class="penulis">Ditulis oleh: M. Darwis</p>
 <img src="buku9.jpg" alt="Sampul Janji" class="sampul">
 <p>Buku ini menceritakan perjalanan hidup tiga sahabat pesantren—Hasan, Kahar, dan Baso—yang tumbuh bersama dalam lingkungan sederhana namun penuh nilai kehidupan. Di pesantren, mereka belajar tentang ilmu agama, persahabatan, dan arti sebuah janji.</p>
 <blockquote>"Kadang kita ingin mengingkari janji karena takut gagal atau lelah menanggung konsekuensinya. Tapi sesungguhnya, janji adalah cermin diri—sejauh mana kita mampu memegang kata-kata dan menjadi orang yang pantas dipercaya."</blockquote>
 <p>Kisah ini menggambarkan bagaimana janji yang pernah diucapkan diuji oleh ambisi, kekuasaan, dan realitas hidup. Dengan bahasa yang sederhana namun menyentuh, penulis berhasil menyampaikan pesan moral.</p>
-</main>
-</section>
+</article>
 
-<section class="daftar-produk"> 
-<main class="artikel">
+<article class="artikel">
 <h2>Bedah Buku: Novel Bungkam Suara</h2>
 <p class="penulis">Ditulis oleh: J.S. KHAIREN</p>
 <img src="buku2.jpg" alt="Sampul Bungkam Suara" class="sampul">
 <p>Buku ini menceritakan tentang perjuangan melawan ketidakadilan dan kekuasaan yang menindas, di mana kebenaran sering kali dibungkam demi kepentingan tertentu. Tokoh-tokohnya dihadapkan pada pilihan sulit antara berani bersuara atau diam demi keselamatan diri.</p>
 <blockquote>"Diam sering kali dipilih demi rasa aman, namun ketika ketidakadilan terus dibiarkan, diam berubah menjadi bentuk persetujuan. Pada titik itulah keberanian bukan lagi pilihan, melainkan kewajiban moral."</blockquote>
 <a href="produk.html" class="btn-kembali">Kembali ke Katalog</a>
-</main>
-</section>
+</article>
+
+</div>
 
 <footer>
 <p>&copy; 2026 Toko Buku Adara Haibah Z</p>
