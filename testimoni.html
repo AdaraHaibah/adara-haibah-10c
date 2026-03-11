@@ -5,195 +5,256 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Form Testimoni - Toko Buku Adara Haibah</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
+
 /* BODY */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #ffe6f0; /* sama dengan beranda */
-  color: #333;
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#ffe6f0;
+color:#333;
 }
 
-/* NAVBAR - persis sama seperti beranda */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  background: linear-gradient(90deg,#ff9ecf,#d8bfd8);
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+animation:navMasuk 0.8s ease;
 }
 
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 17px;
-  position: relative;
-  transition: 0.3s;
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+font-size:17px;
+position:relative;
+transition:0.3s;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -5px;
-  background: white;
-  transition: 0.3s;
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+left:0;
+bottom:-5px;
+background:white;
+transition:0.3s;
 }
 
-nav a:hover::after {
-  width: 100%;
+nav a:hover::after{
+width:100%;
 }
 
-nav a:hover {
-  transform: scale(1.1);
+nav a:hover{
+transform:scale(1.1);
 }
 
-/* JUDUL HALAMAN */
-h1 {
-  text-align: center;
-  margin-top: 30px;
-  color: #ff4fa3;
+/* JUDUL */
+h1{
+text-align:center;
+margin-top:30px;
+color:#ff4fa3;
+animation:judulMasuk 1s ease;
 }
 
-/* FORM CONTAINER - pakai warna dan border seperti card beranda */
-main.formulir {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #fff0f6;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+/* FORM CONTAINER */
+main.formulir{
+max-width:700px;
+margin:40px auto;
+padding:25px;
+background:#fff0f6;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+animation:formMasuk 1.1s ease;
 }
 
 /* FORM TITLE */
-main h2 {
-  text-align: center;
-  color: #ff5cad;
-  margin-bottom: 25px;
+main h2{
+text-align:center;
+color:#ff5cad;
+margin-bottom:25px;
 }
 
-/* FORM STYLING */
-form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
+/* FORM */
+form label{
+display:block;
+margin-top:15px;
+font-weight:bold;
 }
 
-form input, form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 2px solid #f8c8dc;
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-size: 14px;
-  transition: 0.3s;
+form input,
+form textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:2px solid #f8c8dc;
+border-radius:10px;
+box-sizing:border-box;
+font-size:14px;
+transition:0.3s;
 }
 
-form input:focus, form textarea:focus {
-  outline: none;
-  border-color: #ff5cad;
-  box-shadow: 0 0 5px rgba(255,92,173,0.3);
+form input:focus,
+form textarea:focus{
+outline:none;
+border-color:#ff5cad;
+box-shadow:0 0 8px rgba(255,92,173,0.3);
+transform:scale(1.01);
 }
 
 /* BUTTON */
-form button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  background: #ff9ecf;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+form button{
+margin-top:20px;
+width:100%;
+padding:12px;
+background:#ff9ecf;
+color:white;
+border:none;
+border-radius:20px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
 }
 
-form button:hover {
-  background: #ff7fbf;
-  transform: scale(1.05);
+form button:hover{
+background:#ff7fbf;
+transform:scale(1.06);
+box-shadow:0 6px 15px rgba(255,127,191,0.4);
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #ff9ecf;
-  color: white;
-  margin-top: 40px;
-  border-radius: 0 0 12px 12px;
+footer{
+text-align:center;
+padding:20px;
+background:#ff9ecf;
+color:white;
+margin-top:40px;
+animation:footerMasuk 1.3s ease;
 }
+
+/* ANIMATIONS */
+
+@keyframes navMasuk{
+from{
+opacity:0;
+transform:translateY(-60px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes judulMasuk{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes formMasuk{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes footerMasuk{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR persis sama dengan beranda -->
-<nav> 
-  <a href="index.html">Beranda</a>
-  <a href="produk.html">Produk</a>
-  <a href="bedah-buku.html">Bedah Buku</a>
-  <a href="testimoni.html">Testimoni</a>
-  <a href="tampil-testimoni.html">Testimoni Pembeli</a>
-  <a href="kontak.html">Kontak</a>
-  <a href="event.html">Event</a>
+<nav>
+<a href="index.html">Beranda</a>
+<a href="produk.html">Produk</a>
+<a href="bedah-buku.html">Bedah Buku</a>
+<a href="testimoni.html">Testimoni</a>
+<a href="tampil-testimoni.html">Testimoni Pembeli</a>
+<a href="kontak.html">Kontak</a>
+<a href="event.html">Event</a>
 </nav>
 
 <h1>Toko Buku Adara Haibah</h1>
 
 <main class="formulir">
 <h2>Berikan Testimoni Anda</h2>
+
 <form id="formTestimoni">
-    <label for="nama">Nama:</label>
-    <input type="text" id="nama" name="nama" required placeholder="Nama Lengkap">
 
-    <label for="asal">Asal Sekolah/Instansi/Komunitas:</label>
-    <input type="text" id="asal" name="asal" required placeholder="Contoh: SMA Al Alkautsar">
+<label for="nama">Nama:</label>
+<input type="text" id="nama" name="nama" required placeholder="Nama Lengkap">
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required placeholder="email@example.com">
+<label for="asal">Asal Sekolah/Instansi/Komunitas:</label>
+<input type="text" id="asal" name="asal" required placeholder="Contoh: SMA Al Alkautsar">
 
-    <label for="judul">Judul Buku Yang Dibeli:</label>
-    <input type="text" id="judul" name="judul">
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required placeholder="email@example.com">
 
-    <label for="rating">Rating Buku (1-5):</label>
-    <input type="number" id="rating" name="rating" min="1" max="5">
+<label for="judul">Judul Buku Yang Dibeli:</label>
+<input type="text" id="judul" name="judul">
 
-    <label for="pesan">Testimoni Anda:</label>
-    <textarea id="pesan" name="pesan" required placeholder="Tulis Pengalaman Anda..." rows="5"></textarea>
+<label for="rating">Rating Buku (1-5):</label>
+<input type="number" id="rating" name="rating" min="1" max="5">
 
-    <button type="submit">Kirim Testimoni</button>
+<label for="pesan">Testimoni Anda:</label>
+<textarea id="pesan" name="pesan" required placeholder="Tulis Pengalaman Anda..." rows="5"></textarea>
+
+<button type="submit">Kirim Testimoni</button>
+
 </form>
+
 </main>
 
-<!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 Toko Buku Adara Haibah</p>
+<p>&copy; 2026 Toko Buku Adara Haibah</p>
 </footer>
 
 <script>
 document.getElementById('formTestimoni').addEventListener('submit', function(e) {
-    e.preventDefault();
+e.preventDefault();
 
-    const nama = document.getElementById('nama').value;
-    const asal = document.getElementById('asal').value;
-    const email = document.getElementById('email').value;
-    const judul = document.getElementById('judul').value;
-    const rating = document.getElementById('rating').value;
-    const pesan = document.getElementById('pesan').value;
+const nama = document.getElementById('nama').value;
+const asal = document.getElementById('asal').value;
+const email = document.getElementById('email').value;
+const judul = document.getElementById('judul').value;
+const rating = document.getElementById('rating').value;
+const pesan = document.getElementById('pesan').value;
 
-    const dataBaru = {nama, asal, email, judul, rating, pesan};
+const dataBaru = {nama, asal, email, judul, rating, pesan};
 
-    const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
-    testimoniList.push(dataBaru);
-    localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
+const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+testimoniList.push(dataBaru);
+localStorage.setItem('testimoniList', JSON.stringify(testimoniList));
 
-    window.location.href = 'proses-testimoni.html';
+window.location.href = 'proses-testimoni.html';
 });
 </script>
 
