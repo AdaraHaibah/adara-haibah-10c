@@ -1,141 +1,228 @@
+<!DOCTYPE html>
 <html lang="id">
-<head> <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-
-scale=1.0">
+<head>
 
-<title>Profil Usaha Buku</title>
-<link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Event Toko Buku Adara Haibah</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#ffe6f0;
+color:#333;
+}
+
+/* NAVBAR SAMA SEPERTI BERANDA */
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+font-size:17px;
+position:relative;
+transition:0.3s;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+left:0;
+bottom:-5px;
+background:white;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+nav a:hover{
+transform:scale(1.1);
+}
+
+/* HEADER */
+
+header{
+text-align:center;
+padding:40px;
+}
+
+header h1{
+color:#ff4fa3;
+font-size:32px;
+}
+
+/* CONTAINER */
+
+.container{
+width:90%;
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+/* CARD EVENT */
+
+.event{
+background:#fff0f6;
+border-radius:15px;
+padding:25px;
+margin-bottom:25px;
+border:2px solid #f8c8dc;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.event:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.event h2{
+color:#ff5cad;
+}
+
+.event p{
+color:#555;
+font-size:15px;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 20px;
+background:#ff7eb3;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#ff4fa3;
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#ff9ecf;
+color:white;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
 <body>
-    <nav> <a href="index.html">Beranda</a>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<a href="index.html">Beranda</a>
 <a href="produk.html">Produk</a>
 <a href="bedah-buku.html">Bedah Buku</a>
 <a href="testimoni.html">Testimoni</a>
 <a href="tampil-testimoni.html">Testimoni Pembeli</a>
 <a href="kontak.html">Kontak</a>
 <a href="event.html">Event</a>
+
 </nav>
 
-
-<title>Event Toko Buku Adara</title>
-
-<style>
-
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#ffe6f0; /* soft pink */
-}
-
-/* Header */
-header{
-    background:pink; /* pink dominan */
-    color:#5a2a4a;
-    padding:25px;
-    text-align:center;
-}
-
-header h1{
-    margin:0;
-    color: rgb(255, 101, 127);
-}
-
-/* Container */
-.container{
-    width:90%;
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
-}
-
-/* Card Event */
-.event{
-    background:#fff0f6; /* pink sangat lembut */
-    border-radius:12px;
-    padding:20px;
-    margin-bottom:20px;
-    border-left:6px solid #d8bfd8; /* thistle */
-    box-shadow:0 4px 8px rgba(0,0,0,0.08);
-}
-
-.event h2{
-    color:#e69ac0;
-}
-
-.event p{
-    color:#555;
-}
-
-/* Button */
-.btn{
-    display:inline-block;
-    margin-top:10px;
-    padding:10px 18px;
-    background:#ff8fb1;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#ff6f9f;
-}
-
-/* Footer */
-footer{
-    text-align:center;
-    padding:15px;
-    background:#ffb6c1;
-    color:pink;
-}
-
-</style>
-</head>
-
-</body>
+<!-- HEADER -->
 
 <header>
-<h1>Event Toko Buku Adara Haibah Z</h1>
+
+<h1>Event Toko Buku Adara Haibah</h1>
+<p>Ikuti berbagai kegiatan menarik bersama kami</p>
 
 </header>
+
+<!-- EVENT -->
 
 <div class="container">
 
 <div class="event">
+
 <h2>Bedah Buku Novel</h2>
+
 <p><b>Tanggal:</b> 20 April 2026</p>
-<p><b>Waktu:</b> 09.00-11.00</p>
-<p>Ikuti Bedah Buku Novel di Toko Buku Adara dan temukan makna menarik di balik sebuah cerita.</p>
+<p><b>Waktu:</b> 09.00 - 11.00</p>
+
+<p>
+Ikuti Bedah Buku Novel di Toko Buku Adara dan temukan
+makna menarik di balik sebuah cerita.
+</p>
+
 <a href="#" class="btn">Daftar</a>
+
 </div>
 
+
 <div class="event">
+
 <h2>Workshop Menulis</h2>
+
 <p><b>Tanggal:</b> 5 Mei 2026</p>
-<p><b>Waktu:</b> 08.00-15.00</p>
-<p>Belajar teknik menulis cerita yang menarik.</p>
+<p><b>Waktu:</b> 08.00 - 15.00</p>
+
+<p>
+Belajar teknik menulis cerita yang menarik
+bersama mentor berpengalaman.
+</p>
+
 <a href="#" class="btn">Daftar</a>
+
 </div>
+
 
 <div class="event">
+
 <h2>Festival Buku Adara</h2>
+
 <p><b>Tanggal:</b> 12 Mei 2026</p>
-<p><b>Waktu:</b> 08.00-14.03</p>
-<p>Diskon buku dan banyak kegiatan menarik.</p>
+<p><b>Waktu:</b> 08.00 - 14.00</p>
+
+<p>
+Nikmati diskon buku besar dan berbagai kegiatan menarik
+seperti lomba membaca dan talkshow penulis.
+</p>
+
 <a href="#" class="btn">Lihat Detail</a>
+
 </div>
 
 </div>
+
+<!-- FOOTER -->
 
 <footer>
-©2026 Toko Buku Adara Haibah
+
+© 2026 Toko Buku Adara Haibah
+
 </footer>
 
 </body>
-
 </html>
-
-
-
-
-
