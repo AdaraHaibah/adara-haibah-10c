@@ -1,12 +1,14 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toko Buku Adara Haibah</title>
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0">
 
-<style>
-/* NAVBAR */
+<title>Profil Usaha Buku</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+  <style>
+    /* NAVBAR */
 
 nav{
 display:flex;
@@ -18,7 +20,10 @@ box-shadow:0 4px 10px rgba(0,0,0,0.1);
 position:sticky;
 top:0;
 z-index:1000;
+animation:slideDown 0.7s ease;
 }
+
+/* menu */
 
 nav a{
 text-decoration:none;
@@ -27,7 +32,10 @@ font-weight:bold;
 font-size:17px;
 position:relative;
 transition:0.3s;
+padding:5px;
 }
+
+/* garis animasi */
 
 nav a::after{
 content:"";
@@ -44,89 +52,135 @@ nav a:hover::after{
 width:100%;
 }
 
+/* efek hover */
+
 nav a:hover{
 transform:scale(1.1);
 }
 
-</style>
+/* animasi muncul navbar */
 
-</head>
+@keyframes slideDown{
+from{
+opacity:0;
+transform:translateY(-20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+    .artikel{
+max-width:800px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+margin-bottom:30px;
+}
+
+.sampul{
+width:200px;
+display:block;
+margin:15px auto;
+border-radius:10px;
+transition:0.3s;
+}
+
+.sampul:hover{
+transform:scale(1.05);
+}
+  </style>
 <body>
-
-<!-- NAVBAR -->
-
-<nav> 
-<a href="index.html">Beranda</a>
+<nav> <a href="index.html">Beranda</a>
 <a href="produk.html">Produk</a>
 <a href="bedah-buku.html">Bedah Buku</a>
 <a href="testimoni.html">Testimoni</a>
 <a href="tampil-testimoni.html">Testimoni Pembeli</a>
-<a href="kontak.html">Kontak</a>
-<a href="event.html">Event</a>
+
 </nav>
+<h1>Toko Buku Adara Haibah Z</h1>
 
-<!-- HERO -->
+<section class="daftar-produk"> 
+<main class="artikel">
+    <h2>Bedah Buku: Negeri 5 Menara</h2>
+    <p class="penulis">Ditulis oleh: Ahmad Fuadi</p>
+    <img src="buku8.jpg 5 menara.jpg" alt="Sampul Negeri 5 Menara" class="sampul">
+    <p>
+        Buku ini menceritakan perjalanan hidup Alif, seprang anak Minang yang menempuh pendidikan di pondok pesantren Madani.
+        Awalnya penuh keraguan, namun perlahan Alif menemukan makna perjuangan, persahabatan, dan kekuatan impian 
+    </p>
 
-<section class="hero">
+    <blockquote> 
 
-<img src="https://cdn-icons-png.flaticon.com/512/29/29302.png">
-
-<h1>Selamat Datang di Toko Buku Adara Haibah</h1>
+        "Man Jadda Wajada - Siapa yang bersungguh-sungguh, dia akan berhasil."
+    </blockquote>
 
 <p>
-Website ini berisi informasi tentang produk buku, bedah buku,
-dan testimoni pelanggan.
+    Kalimat itu menjadi semanat utama dalam buku ini. Kisah ini ditulis berdasarkan pengalaman nyata ini sangat menginspirasi, terutama bagi pelajar yang sedang mengejar mimpi mereka. Penulis berhasil menyampaikan pesan-pesan moral melalui narasi yang hidup.
 </p>
 
+<p> 
+    Buku ini cocok dibaca oleh remaja dan orang dewasa yang sedang mencari motivasi hidup. Cerita persahabatan, perjuangan, dan cinta belajar membuatnya menyentuh dan relevan bagi pembaca di berbagai usia
+</p>
+</main>
 </section>
 
-<!-- KATEGORI -->
+<section class="daftar-produk"> 
+<main class="artikel">
+    <h2>Bedah Buku: Novel Janji Tere Liye</h2>
+    <p class="penulis">Ditulis oleh: M. Darwis</p>
+    <img src="buku9.jpg" alt="Sampul Janji" class="sampul">
 
-<section class="section">
+    <p>
+        Buku ini menceritakan perjalanan hidup tiga sahabat pesantren—Hasan, Kahar, dan Baso— yang tumbuh bersama dalam lingkungan sederhana namun penuh nilai kehidupan. Di pesantren, mereka belajar tentang ilmu agama, persahabatan, dan arti sebuah janji. Waktu kemudian membawa mereka ke jalan hidup yang berbeda, dengan berbagai ujian dan pilihan yang tidak mudah.
+    </p>
 
-<h2>Jenis-Jenis Buku yang Kami Jual</h2>
+    <blockquote> 
 
-<div class="cards">
+        "Kadang kita ingin mengingkari janji karena takut gagal atau lelah menanggung konsekuensinya. Tapi sesungguhnya, janji adalah cermin diri—sejauh mana kita mampu memegang kata-kata dan menjadi orang yang pantas dipercaya."
+    </blockquote>
 
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
-<h3>Buku Pelajaran</h3>
-<p>Matematika, Bahasa Indonesia, IPA, IPS untuk SD hingga SMA.</p>
-</div>
+<p>
+    Kisah ini menggambarkan bagaimana janji yang pernah diucapkan diuji oleh ambisi, kekuasaan, dan realitas hidup. Dengan bahasa yang sederhana namun menyentuh, penulis berhasil menyampaikan pesan moral tentang kejujuran, tanggung jawab, dan integritas diri.
+</p>
 
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
-<h3>Novel Fiksi</h3>
-<p>Novel remaja, romance, misteri, dan fiksi ilmiah.</p>
-</div>
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
-<h3>Buku Motivasi</h3>
-<p>Buku inspiratif seperti Atomic Habits dan lainnya.</p>
-</div>
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/2702/2702134.png">
-<h3>Buku Anak</h3>
-<p>Buku cerita bergambar dan edukasi anak.</p>
-</div>
-
-<div class="card">
-<img src="https://cdn-icons-png.flaticon.com/512/2436/2436874.png">
-<h3>Buku Referensi</h3>
-<p>Ensiklopedia, kamus, buku pengetahuan umum.</p>
-</div>
-
-</div>
-
+<p> 
+    Buku ini cocok dibaca oleh remaja maupun orang dewasa karena ceritanya dekat dengan kehidupan nyata. Kisah persahabatan dan perjuangan hidup yang disajikan membuat novel ini inspiratif dan sarat makna.
+</p>
+</main>
 </section>
 
-<footer>
-© 2026 Toko Buku Adara Haibah
-</footer>
+<section class="daftar-produk"> 
+<main class="artikel">
+    <h2>Bedah Buku: Novel Bungkam Suara</h2>
+    <p class="penulis">Ditulis oleh: J.S. KHAIREN</p>
+    <img src="buku2.jpg" alt="Sampul Bungkam Suara" class="sampul">
+
+    <p>
+       Buku ini menceritakan tentang perjuangan melawan ketidakadilan dan kekuasaan yang menindas, di mana kebenaran sering kali dibungkam demi kepentingan tertentu. Tokoh-tokohnya dihadapkan pada pilihan sulit antara berani bersuara atau diam demi keselamatan diri.
+    </p>
+
+    <blockquote> 
+
+        "Diam sering kali dipilih demi rasa aman, namun ketika ketidakadilan terus dibiarkan, diam berubah menjadi bentuk persetujuan. Pada titik itulah keberanian bukan lagi pilihan, melainkan kewajiban moral."
+    </blockquote>
+
+<p>
+   Melalui alur cerita yang tegang dan emosional, penulis menggambarkan bagaimana keberanian, nurani, dan kejujuran diuji dalam situasi yang penuh tekanan. Dengan gaya bahasa yang lugas dan kuat, pesan moral tentang pentingnya membela kebenaran tersampaikan dengan jelas.
+</p>
+
+<p> 
+  Buku ini cocok dibaca oleh remaja dan orang dewasa karena mengajak pembaca untuk peka terhadap isu sosial, keadilan, dan keberanian moral. Ceritanya relevan dengan kehidupan nyata dan memberikan refleksi mendalam tentang arti bersuara demi kebenaran.
+</p>
+<a href="produk.html" class="btn-kembali">Kembali ke Katalog</a>
+</main>
+</section>
+
+<footer> 
+    <p>&copy; 2026 Toko Buku Adara Haibah Z </p>
+   </footer>
 
 </body>
-</html>
-
-ini contoh 
+</html>  buat navigasinya kyk coding sblmnya dan jadi aestethic dan bagus ada animasinya 
