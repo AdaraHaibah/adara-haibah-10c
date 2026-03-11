@@ -13,8 +13,69 @@ scale=1.0">
 <a href="bedah-buku.html">Bedah Buku</a>
 <a href="testimoni.html">Testimoni</a>
 <a href="tampil-testimoni.html">Testimoni Pembeli</a>
-
 </nav>
+    /* NAVBAR */
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
+padding:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
+animation:slideDown 0.7s ease;
+}
+
+/* menu */
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+font-size:17px;
+position:relative;
+transition:0.3s;
+padding:5px;
+}
+
+/* garis animasi */
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+left:0;
+bottom:-5px;
+background:white;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* efek hover */
+
+nav a:hover{
+transform:scale(1.1);
+}
+
+/* animasi muncul navbar */
+
+@keyframes slideDown{
+from{
+opacity:0;
+transform:translateY(-20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 <h1>Toko Buku Adara Haibah Z</h1>
 
 <section class="daftar-produk"> 
@@ -99,4 +160,5 @@ scale=1.0">
 
 </body>
 </html>
+
 
