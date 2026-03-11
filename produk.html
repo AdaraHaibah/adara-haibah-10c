@@ -1,330 +1,324 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daftar Produk Buku - Toko Buku Adara Haibah</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Produk Buku - Toko Buku Adara Haibah</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-/* BODY */
-body{
-  font-family:'Poppins', sans-serif;
-  background:#ffe6f0;
-  color:#333;
-}
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#ffe6f0;
+      color:#333;
+    }
 
-/* NAVBAR */
-nav{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:30px;
-  background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
-  padding:15px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  animation:navMasuk 0.8s ease;
-}
+    /* NAVBAR */
+    nav{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:30px;
+      background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
+      padding:15px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      animation:navMasuk 0.8s ease;
+    }
 
-nav a{
-  text-decoration:none;
-  color:white;
-  font-weight:bold;
-  font-size:17px;
-  position:relative;
-  transition:0.3s;
-}
+    nav a{
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      font-size:17px;
+      position:relative;
+      transition:0.3s;
+    }
 
-nav a::after{
-  content:"";
-  position:absolute;
-  width:0%;
-  height:2px;
-  left:0;
-  bottom:-5px;
-  background:white;
-  transition:0.3s;
-}
+    nav a::after{
+      content:"";
+      position:absolute;
+      width:0%;
+      height:2px;
+      left:0;
+      bottom:-5px;
+      background:white;
+      transition:0.3s;
+    }
 
-nav a:hover::after{
-  width:100%;
-}
+    nav a:hover::after{
+      width:100%;
+    }
 
-nav a:hover{
-  transform:scale(1.1);
-  color:#fffde7;
-}
+    nav a:hover{
+      transform:scale(1.1);
+    }
 
-/* JUDUL HALAMAN */
-.judul{
-  text-align:center;
-  margin-top:40px;
-  font-size:34px;
-  color:#ff4fa3;
-  animation:judulMasuk 1s ease;
-}
+    /* JUDUL */
+    .judul{
+      text-align:center;
+      margin-top:40px;
+      margin-bottom:10px;
+      font-size:34px;
+      color:#ff4fa3;
+      animation:judulMasuk 1s ease;
+    }
 
-/* GRID PRODUK */
-.daftar-produk{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
-  gap:25px;
-  padding:40px;
-  max-width:1100px;
-  margin:auto;
-}
+    .subjudul{
+      text-align:center;
+      color:#666;
+      margin-bottom:30px;
+      animation:judulMasuk 1.1s ease;
+    }
 
-/* CARD PRODUK */
-.produk{
-  background:#fff0f6;
-  padding:20px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:0 6px 15px rgba(0,0,0,0.08);
-  border:2px solid #f8c8dc;
-  transition:0.3s;
-  opacity:0;
-  transform:translateY(30px);
-  animation:muncul 0.8s ease forwards;
-}
+    /* GRID PRODUK */
+    .daftar-produk{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+      gap:25px;
+      padding:20px 40px 40px;
+      max-width:1100px;
+      margin:auto;
+    }
 
-.produk:nth-child(1){ animation-delay:0.2s; }
-.produk:nth-child(2){ animation-delay:0.4s; }
-.produk:nth-child(3){ animation-delay:0.6s; }
-.produk:nth-child(4){ animation-delay:0.8s; }
-.produk:nth-child(5){ animation-delay:1s; }
-.produk:nth-child(6){ animation-delay:1.2s; }
+    /* CARD */
+    .produk{
+      background:#fff0f6;
+      padding:20px;
+      border-radius:18px;
+      text-align:center;
+      box-shadow:0 6px 15px rgba(0,0,0,0.08);
+      border:2px solid #f8c8dc;
+      transition:0.3s;
+      opacity:0;
+      transform:translateY(40px);
+      animation:cardMasuk 0.8s ease forwards;
+    }
 
-/* HOVER CARD */
-.produk:hover{
-  transform:translateY(-8px) scale(1.03);
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
+    .produk:nth-child(1){ animation-delay:0.2s; }
+    .produk:nth-child(2){ animation-delay:0.4s; }
+    .produk:nth-child(3){ animation-delay:0.6s; }
+    .produk:nth-child(4){ animation-delay:0.8s; }
+    .produk:nth-child(5){ animation-delay:1s; }
+    .produk:nth-child(6){ animation-delay:1.2s; }
 
-.produk img{
-  border-radius:10px;
-  margin-bottom:10px;
-  transition:0.3s;
-  max-width:100%;
-  height:auto;
-}
+    .produk:hover{
+      transform:translateY(-10px) scale(1.03);
+      box-shadow:0 12px 28px rgba(0,0,0,0.15);
+    }
 
-.produk:hover img{
-  transform:scale(1.08) rotate(2deg);
-}
+    .produk img{
+      width:150px;
+      height:auto;
+      border-radius:10px;
+      margin-bottom:12px;
+      transition:0.3s;
+    }
 
-/* JUDUL BUKU */
-.produk h2{
-  font-size:18px;
-  color:#ff5cad;
-  margin-bottom:8px;
-}
+    .produk:hover img{
+      transform:scale(1.08);
+    }
 
-/* HARGA */
-.harga{
-  font-weight:bold;
-  color:#444;
-  margin:6px 0;
-}
+    .produk h2{
+      font-size:18px;
+      color:#ff5cad;
+      margin-bottom:8px;
+      min-height:48px;
+    }
 
-/* DESKRIPSI */
-.deskripsi{
-  font-size:14px;
-  line-height:1.5;
-}
+    .harga{
+      font-weight:bold;
+      color:#444;
+      margin:8px 0;
+    }
 
-/* LINK KEMBALI */
-.kembali{
-  text-align:center;
-  margin-top:10px;
-}
+    .deskripsi{
+      font-size:14px;
+      line-height:1.6;
+    }
 
-.kembali a{
-  display:inline-block;
-  text-decoration:none;
-  background:#ff9ecf;
-  color:white;
-  padding:10px 20px;
-  border-radius:20px;
-  transition:0.3s;
-}
+    /* TOMBOL KEMBALI */
+    .kembali{
+      text-align:center;
+      margin:10px 0 30px;
+    }
 
-.kembali a:hover{
-  background:#ff7fbf;
-  transform:scale(1.05);
-}
+    .kembali a{
+      display:inline-block;
+      text-decoration:none;
+      background:#ff9ecf;
+      color:white;
+      padding:12px 22px;
+      border-radius:20px;
+      transition:0.3s;
+      font-weight:600;
+    }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#ff9ecf;
-  color:white;
-  margin-top:40px;
-  animation:footerMasuk 1.2s ease;
-}
+    .kembali a:hover{
+      background:#ff7fbf;
+      transform:scale(1.05);
+    }
 
-/* ANIMASI */
-@keyframes navMasuk{
-  from{
-    opacity:0;
-    transform:translateY(-50px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
+    /* FOOTER */
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#ff9ecf;
+      color:white;
+      margin-top:20px;
+      animation:footerMasuk 1.2s ease;
+    }
 
-@keyframes judulMasuk{
-  from{
-    opacity:0;
-    transform:translateY(-25px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
+    /* ANIMASI */
+    @keyframes navMasuk{
+      from{
+        opacity:0;
+        transform:translateY(-50px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
 
-@keyframes muncul{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
+    @keyframes judulMasuk{
+      from{
+        opacity:0;
+        transform:translateY(-25px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
 
-@keyframes footerMasuk{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
+    @keyframes cardMasuk{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
 
-/* RESPONSIVE */
-@media (max-width:768px){
-  nav{
-    gap:15px;
-    padding:12px;
-  }
+    @keyframes footerMasuk{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
 
-  nav a{
-    font-size:15px;
-  }
+    @media (max-width:768px){
+      nav{
+        gap:15px;
+        padding:12px;
+      }
 
-  .judul{
-    font-size:28px;
-    margin-top:30px;
-    padding:0 15px;
-  }
+      nav a{
+        font-size:15px;
+      }
 
-  .daftar-produk{
-    padding:20px;
-  }
-}
-</style>
+      .judul{
+        font-size:28px;
+        padding:0 15px;
+      }
+
+      .daftar-produk{
+        padding:20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav> 
-  <a href="index.html">Beranda</a>
-  <a href="produk.html">Produk</a>
-  <a href="bedah-buku.html">Bedah Buku</a>
-  <a href="testimoni.html">Testimoni</a>
-  <a href="tampil-testimoni.html">Testimoni Pembeli</a>
-  <a href="kontak.html">Kontak</a>
-  <a href="event.html">Event</a>
-</nav>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="bedah-buku.html">Bedah Buku</a>
+    <a href="testimoni.html">Testimoni</a>
+    <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="event.html">Event</a>
+  </nav>
 
-<!-- JUDUL HALAMAN -->
-<h1 class="judul">Daftar Produk Buku</h1>
+  <h1 class="judul">Daftar Produk Buku</h1>
+  <p class="subjudul">Temukan buku favorit Anda di Toko Buku Adara Haibah</p>
 
-<!-- DAFTAR PRODUK -->
-<section class="daftar-produk">
+  <section class="daftar-produk">
 
-<div class="produk">
-  <img src="buku3.jpg" alt="dompet" width="150">
-  <h2>Novel Dompet Ayah Sepatu Ibu</h2>
-  <p class="harga">Rp99.000</p>
-  <p class="deskripsi">
-    Kisah keluarga sederhana yang menyentuh tentang pengorbanan orang tua, kasih sayang tanpa syarat, dan perjuangan ekonomi demi kebahagiaan anak-anaknya.
+    <div class="produk">
+      <img src="buku3.jpg" alt="Novel Dompet Ayah Sepatu Ibu">
+      <h2>Novel Dompet Ayah Sepatu Ibu</h2>
+      <p class="harga">Rp99.000</p>
+      <p class="deskripsi">
+        Kisah keluarga sederhana yang menyentuh tentang pengorbanan orang tua, kasih sayang tanpa syarat, dan perjuangan ekonomi demi kebahagiaan anak-anaknya.
+      </p>
+    </div>
+
+    <div class="produk">
+      <img src="buku1.jpg" alt="Novel Home Sweet Loan">
+      <h2>Novel Home Sweet Loan</h2>
+      <p class="harga">Rp99.000</p>
+      <p class="deskripsi">
+        Novel ini menggambarkan realita generasi muda di kota besar yang bergulat dengan KPR, utang, dan tuntutan hidup modern.
+      </p>
+    </div>
+
+    <div class="produk">
+      <img src="buku2.jpg" alt="Novel Bungkam Suara">
+      <h2>Novel Bungkam Suara</h2>
+      <p class="harga">Rp99.000</p>
+      <p class="deskripsi">
+        Novel karya J.S. Khairen tentang kebebasan berbicara dan perlawanan terhadap kekuasaan yang menindas.
+      </p>
+    </div>
+
+    <div class="produk">
+      <img src="buku7.jpg" alt="Syarh Aqidah Washitiyyah">
+      <h2>Syarh Aqidah Washitiyyah</h2>
+      <p class="harga">Rp259.000</p>
+      <p class="deskripsi">
+        Pengantar ilmu akidah Islam yang menjelaskan dasar keimanan berdasarkan Al-Qur'an dan Sunnah.
+      </p>
+    </div>
+
+    <div class="produk">
+      <img src="buku9.jpg" alt="Janji - Tere Liye">
+      <h2>Janji - Tere Liye</h2>
+      <p class="harga">Rp99.000</p>
+      <p class="deskripsi">
+        Cerita tentang tiga sahabat yang diuji oleh janji di masa lalu.
+      </p>
+    </div>
+
+    <div class="produk">
+      <img src="buku11.jpg" alt="Berani Tidak Disukai">
+      <h2>Berani Tidak Disukai</h2>
+      <p class="harga">Rp89.000</p>
+      <p class="deskripsi">
+        Buku pengembangan diri tentang keberanian menjadi diri sendiri tanpa takut penilaian orang lain.
+      </p>
+    </div>
+
+  </section>
+
+  <p class="kembali">
+    <a href="index.html">Kembali ke Beranda</a>
   </p>
-</div>
 
-<div class="produk">
-  <img src="buku1.jpg" alt="home" width="150">
-  <h2>Novel Home Sweet Loan</h2>
-  <p class="harga">Rp99.000</p>
-  <p class="deskripsi">
-    Novel ini menggambarkan realita generasi muda di kota besar yang bergulat dengan KPR, utang, dan tuntutan hidup modern.
-  </p>
-</div>
-
-<div class="produk">
-  <img src="buku2.jpg" alt="bungkamsuara" width="150">
-  <h2>Novel Bungkam Suara</h2>
-  <p class="harga">Rp99.000</p>
-  <p class="deskripsi">
-    Novel karya J.S. Khairen tentang kebebasan berbicara dan perlawanan terhadap kekuasaan yang menindas.
-  </p>
-</div>
-
-<div class="produk">
-  <img src="buku7.jpg" alt="aqidah" width="150">
-  <h2>Syarh Aqidah Washitiyyah</h2>
-  <p class="harga">Rp259.000</p>
-  <p class="deskripsi">
-    Pengantar ilmu akidah Islam yang menjelaskan dasar keimanan berdasarkan Al-Qur'an dan Sunnah.
-  </p>
-</div>
-
-<div class="produk">
-  <img src="buku9.jpg" alt="janji" width="150">
-  <h2>Janji - Tere Liye</h2>
-  <p class="harga">Rp99.000</p>
-  <p class="deskripsi">
-    Cerita tentang tiga sahabat yang diuji oleh janji di masa lalu.
-  </p>
-</div>
-
-<div class="produk">
-  <img src="buku11.jpg" alt="beranitidakdisukai" width="150">
-  <h2>Berani Tidak Disukai</h2>
-  <p class="harga">Rp89.000</p>
-  <p class="deskripsi">
-    Buku pengembangan diri tentang keberanian menjadi diri sendiri tanpa takut penilaian orang lain.
-  </p>
-</div>
-
-</section>
-
-<p class="kembali">
-  <a href="index.html">Kembali ke Beranda</a>
-</p>
-
-<!-- FOOTER -->
-<footer>
-<p>&copy; 2026 Toko Buku Adara Haibah</p>
-</footer>
+  <footer>
+    <p>&copy; 2026 Toko Buku Adara Haibah</p>
+  </footer>
 
 </body>
 </html>
