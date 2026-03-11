@@ -1,68 +1,174 @@
 <!DOCTYPE html>
 <html lang="id">
-<head> <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-
-scale=1.0">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimoni Pembeli - Toko Buku Adara Haibah</title>
 
-<title>Profil Usaha Buku</title>
-<link rel="stylesheet" href="style.css" />
+<style>
+/* BODY */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffe6f0; /* sama seperti beranda */
+  color: #333;
+}
+
+/* NAVBAR - persis sama seperti beranda */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: linear-gradient(90deg,#ff9ecf,#d8bfd8);
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: white;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+}
+
+/* MAIN CONTENT */
+main.formulir {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff0f6; /* sama seperti card beranda */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+main h2 {
+  text-align: center;
+  color: #ff5cad; /* sama seperti heading di card beranda */
+  margin-bottom: 25px;
+}
+
+/* TESTIMONI BOX */
+.testimoni-box {
+  background: #fff0f6; /* sama tema card */
+  border: 2px solid #f8c8dc;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.testimoni-box:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* BUTTON HAPUS */
+button#hapusSemua {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 25px;
+  background: #ff9ecf; /* sama tema beranda */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button#hapusSemua:hover {
+  background: #ff7fbf;
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ff9ecf; /* sama navbar beranda */
+  color: white;
+  margin-top: 40px;
+  border-radius: 0 0 12px 12px;
+}
+</style>
+
+</head>
 <body>
-  
-    <nav> 
-<a href="index.html">Beranda</a>
-<a href="produk.html">Produk</a>
-<a href="bedah-buku.html">Bedah Buku</a>
-<a href="testimoni.html">Testimoni</a>
-<a href="tampil-testimoni.html">Testimoni Pembeli</a>
-<a href="kontak.html">Kontak</a>
-<a href="event.html">Event</a>
-</nav>
-<main class="formulir">
-<h2> Testimoni-testimoni pembeli:</h2>
-<div id="daftarTestimoni"></div>
-<button id="hapusSemua">Hapus Semua Testimoni</button></div>
 
-<section>
-    <div id="daftarTestimoni"></div>
-</section>
+<!-- NAVBAR -->
+<nav> 
+  <a href="index.html">Beranda</a>
+  <a href="produk.html">Produk</a>
+  <a href="bedah-buku.html">Bedah Buku</a>
+  <a href="testimoni.html">Testimoni</a>
+  <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+  <a href="kontak.html">Kontak</a>
+  <a href="event.html">Event</a>
+</nav>
+
+<main class="formulir">
+<h2>Testimoni-testimoni Pembeli</h2>
+<div id="daftarTestimoni"></div>
+<button id="hapusSemua">Hapus Semua Testimoni</button>
 </main>
 
 <footer> 
-    <p>&copy; 2026 Toko Buku Adara Haibah </p>
+    <p>&copy; 2026 Toko Buku Adara Haibah</p>
 </footer>
+
 <script>
-    const container = document.getElementById('daftarTestimoni');
-    const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
-    if (testimoniList.length ===0){
-      container.innerHTML = "<p>Belum ada testimoni.</p>";
-      }else{
-        testimoniList.forEach((t,i) => {
-            const el = document.createElement('div');
-            el.className = 'testimoni-box';
-            el.innerHTML =`
-            <p><strong>Nama:</strong> ${t.nama}</p>
-            <p><strong>Asal:</strong> ${t.asal}</p>
-            <p><strong>Email:</strong> ${t.email}</p>
-            <p><strong>Judul:</strong> ${t.judul}</p>
-            <p><strong>Rating:</strong> ${t.rating}</p>
-            <p><strong>Pesan:</strong> ${t.pesan}</p>
-            `;
-            container.appendChild(el);
-        });
+const container = document.getElementById('daftarTestimoni');
+const testimoniList = JSON.parse(localStorage.getItem('testimoniList')) || [];
+
+if (testimoniList.length === 0){
+  container.innerHTML = "<p>Belum ada testimoni.</p>";
+} else {
+  testimoniList.forEach((t,i) => {
+    const el = document.createElement('div');
+    el.className = 'testimoni-box';
+    el.innerHTML =`
+      <p><strong>Nama:</strong> ${t.nama}</p>
+      <p><strong>Asal:</strong> ${t.asal}</p>
+      <p><strong>Email:</strong> ${t.email}</p>
+      <p><strong>Judul:</strong> ${t.judul}</p>
+      <p><strong>Rating:</strong> ${t.rating}</p>
+      <p><strong>Pesan:</strong> ${t.pesan}</p>
+    `;
+    container.appendChild(el);
+  });
 }
 
-    document.getElementById("hapusSemua").addEventListener("click", function() {
-        const konfirmasi = confirm("Apakah Anda yakin ingin menghapus semua testimoni?");
-        if (konfirmasi) {
-            localStorage.removeItem("testimoniList");
-            location.reload();
+document.getElementById("hapusSemua").addEventListener("click", function() {
+  const konfirmasi = confirm("Apakah Anda yakin ingin menghapus semua testimoni?");
+  if (konfirmasi) {
+    localStorage.removeItem("testimoniList");
+    location.reload();
+  }
+});
+</script>
 
-        }
-         });
-   </script>
 </body>
-
 </html>
-
-
-
