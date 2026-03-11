@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Event Toko Buku Adara Haibah</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-margin:0;
 font-family:'Poppins',sans-serif;
 background:#ffe6f0;
 color:#333;
 }
 
 /* NAVBAR */
-
 nav{
 display:flex;
 justify-content:center;
+flex-wrap:wrap;
 gap:30px;
 background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
 padding:15px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
-animation:slideDown 0.7s ease;
+animation:navTurun 0.8s ease;
 }
 
 nav a{
@@ -57,20 +63,24 @@ transform:scale(1.1);
 }
 
 /* HEADER */
-
 header{
 text-align:center;
-padding:40px;
-animation:fadeDown 1s ease;
+padding:40px 20px;
+animation:judulMasuk 1s ease;
 }
 
 header h1{
 color:#ff4fa3;
 font-size:32px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+color:#666;
 }
 
 /* CONTAINER */
-
 .container{
 width:90%;
 max-width:900px;
@@ -79,7 +89,6 @@ padding:20px;
 }
 
 /* CARD EVENT */
-
 .event{
 background:#fff0f6;
 border-radius:15px;
@@ -88,15 +97,21 @@ margin-bottom:25px;
 border:2px solid #f8c8dc;
 box-shadow:0 4px 15px rgba(0,0,0,0.08);
 transition:0.3s;
-animation:fadeUp 0.8s ease;
+opacity:0;
+transform:translateY(40px);
+animation:cardMuncul 0.9s ease forwards;
 }
 
-.event:nth-child(2){
+.event:nth-child(1){
 animation-delay:0.2s;
 }
 
+.event:nth-child(2){
+animation-delay:0.5s;
+}
+
 .event:nth-child(3){
-animation-delay:0.4s;
+animation-delay:0.8s;
 }
 
 .event:hover{
@@ -106,15 +121,17 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
 .event h2{
 color:#ff5cad;
+margin-bottom:10px;
 }
 
 .event p{
 color:#555;
 font-size:15px;
+line-height:1.7;
+margin-bottom:8px;
 }
 
 /* BUTTON */
-
 .btn{
 display:inline-block;
 margin-top:10px;
@@ -129,27 +146,25 @@ transition:0.3s;
 
 .btn:hover{
 background:#ff4fa3;
-transform:scale(1.07);
+transform:scale(1.08);
 box-shadow:0 6px 15px rgba(255,79,163,0.3);
 }
 
 /* FOOTER */
-
 footer{
 text-align:center;
 padding:20px;
 background:#ff9ecf;
 color:white;
 margin-top:40px;
-animation:fadeUp 1s ease;
+animation:footerMuncul 1.2s ease;
 }
 
 /* ANIMATIONS */
-
-@keyframes slideDown{
+@keyframes navTurun{
 from{
 opacity:0;
-transform:translateY(-100%);
+transform:translateY(-60px);
 }
 to{
 opacity:1;
@@ -157,7 +172,7 @@ transform:translateY(0);
 }
 }
 
-@keyframes fadeDown{
+@keyframes judulMasuk{
 from{
 opacity:0;
 transform:translateY(-30px);
@@ -168,7 +183,7 @@ transform:translateY(0);
 }
 }
 
-@keyframes fadeUp{
+@keyframes cardMuncul{
 from{
 opacity:0;
 transform:translateY(40px);
@@ -179,16 +194,42 @@ transform:translateY(0);
 }
 }
 
-</style>
+@keyframes footerMuncul{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
+/* RESPONSIVE */
+@media (max-width:768px){
+nav{
+gap:15px;
+padding:12px;
+}
+
+nav a{
+font-size:15px;
+}
+
+header h1{
+font-size:26px;
+}
+
+header p{
+font-size:16px;
+}
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav>
-
 <a href="index.html">Beranda</a>
 <a href="produk.html">Produk</a>
 <a href="bedah-buku.html">Bedah Buku</a>
@@ -196,80 +237,52 @@ transform:translateY(0);
 <a href="tampil-testimoni.html">Testimoni Pembeli</a>
 <a href="kontak.html">Kontak</a>
 <a href="event.html">Event</a>
-
 </nav>
 
-<!-- HEADER -->
-
 <header>
-
 <h1>Event Toko Buku Adara Haibah</h1>
 <p>Ikuti berbagai kegiatan menarik bersama kami</p>
-
 </header>
-
-<!-- EVENT -->
 
 <div class="container">
 
 <div class="event">
-
 <h2>Bedah Buku Novel</h2>
-
 <p><b>Tanggal:</b> 20 April 2026</p>
 <p><b>Waktu:</b> 09.00 - 11.00</p>
-
 <p>
 Ikuti Bedah Buku Novel di Toko Buku Adara dan temukan
 makna menarik di balik sebuah cerita.
 </p>
-
 <a href="#" class="btn">Daftar</a>
-
 </div>
 
-
 <div class="event">
-
 <h2>Workshop Menulis</h2>
-
 <p><b>Tanggal:</b> 5 Mei 2026</p>
 <p><b>Waktu:</b> 08.00 - 15.00</p>
-
 <p>
 Belajar teknik menulis cerita yang menarik
 bersama mentor berpengalaman.
 </p>
-
 <a href="#" class="btn">Daftar</a>
-
 </div>
 
-
 <div class="event">
-
 <h2>Festival Buku Adara</h2>
-
 <p><b>Tanggal:</b> 12 Mei 2026</p>
 <p><b>Waktu:</b> 08.00 - 14.00</p>
-
 <p>
 Nikmati diskon buku besar dan berbagai kegiatan menarik
 seperti lomba membaca dan talkshow penulis.
 </p>
-
 <a href="#" class="btn">Lihat Detail</a>
-
 </div>
 
 </div>
-
-<!-- FOOTER -->
 
 <footer>
-
 © 2026 Toko Buku Adara Haibah
-
 </footer>
 
 </body>
