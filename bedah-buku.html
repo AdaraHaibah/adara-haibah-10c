@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profil Usaha Buku</title>
-<link rel="stylesheet" href="style.css">
+<title>Toko Buku Adara Haibah</title>
 
 <style>
-
-body{
-margin:0;
-font-family:'Poppins', sans-serif;
-background:#ffe6f0;
-color:#333;
-}
-
 /* NAVBAR */
 
 nav{
@@ -25,6 +15,9 @@ gap:30px;
 background:linear-gradient(90deg,#ff9ecf,#d8bfd8);
 padding:15px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
@@ -55,129 +48,12 @@ nav a:hover{
 transform:scale(1.1);
 }
 
-/* JUDUL HALAMAN */
-
-.judul{
-text-align:center;
-margin-top:40px;
-font-size:34px;
-color:#ff4fa3;
-}
-
-/* GRID PRODUK */
-
-.daftar-produk{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
-padding:40px;
-max-width:1100px;
-margin:auto;
-}
-
-/* CARD PRODUK */
-
-.produk{
-background:#fff0f6;
-padding:20px;
-border-radius:18px;
-text-align:center;
-box-shadow:0 6px 15px rgba(0,0,0,0.08);
-border:2px solid #f8c8dc;
-transition:0.3s;
-animation:muncul 0.8s ease;
-}
-
-/* ANIMASI HOVER */
-
-.produk:hover{
-transform:translateY(-8px) scale(1.03);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* GAMBAR BUKU */
-
-.produk img{
-border-radius:10px;
-margin-bottom:10px;
-transition:0.3s;
-}
-
-.produk:hover img{
-transform:scale(1.08) rotate(2deg);
-}
-
-/* JUDUL BUKU */
-
-.produk h2{
-font-size:18px;
-color:#ff5cad;
-}
-
-/* HARGA */
-
-.harga{
-font-weight:bold;
-color:#444;
-margin:6px 0;
-}
-
-/* DESKRIPSI */
-
-.deskripsi{
-font-size:14px;
-line-height:1.5;
-}
-
-/* LINK KEMBALI */
-
-.kembali{
-text-align:center;
-margin-bottom:30px;
-}
-
-.kembali a{
-text-decoration:none;
-background:#ff9ecf;
-color:white;
-padding:10px 20px;
-border-radius:20px;
-transition:0.3s;
-}
-
-.kembali a:hover{
-background:#ff7fbf;
-transform:scale(1.05);
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-background:#ff9ecf;
-color:white;
-margin-top:40px;
-}
-
-/* ANIMASI MUNCUL */
-
-@keyframes muncul{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
 </style>
 
 </head>
-
 <body>
+
+<!-- NAVBAR -->
 
 <nav> 
 <a href="index.html">Beranda</a>
@@ -189,73 +65,68 @@ transform:translateY(0);
 <a href="event.html">Event</a>
 </nav>
 
-<h1 class="judul">Daftar Produk Buku</h1>
+<!-- HERO -->
 
-<section class="daftar-produk">
+<section class="hero">
 
-<div class="produk">
-<img src="buku3.jpg" alt="dompet" width="150">
-<h2>Novel Dompet Ayah Sepatu Ibu</h2>
-<p class="harga">Rp99.000</p>
-<p class="deskripsi">
-Kisah keluarga sederhana yang menyentuh tentang pengorbanan orang tua, kasih sayang tanpa syarat, dan perjuangan ekonomi demi kebahagiaan anak-anaknya.
+<img src="https://cdn-icons-png.flaticon.com/512/29/29302.png">
+
+<h1>Selamat Datang di Toko Buku Adara Haibah</h1>
+
+<p>
+Website ini berisi informasi tentang produk buku, bedah buku,
+dan testimoni pelanggan.
 </p>
+
+</section>
+
+<!-- KATEGORI -->
+
+<section class="section">
+
+<h2>Jenis-Jenis Buku yang Kami Jual</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+<h3>Buku Pelajaran</h3>
+<p>Matematika, Bahasa Indonesia, IPA, IPS untuk SD hingga SMA.</p>
 </div>
 
-<div class="produk">
-<img src="buku1.jpg" alt="home" width="150">
-<h2>Novel Home Sweet Loan</h2>
-<p class="harga">Rp99.000</p>
-<p class="deskripsi">
-Novel ini menggambarkan realita generasi muda di kota besar yang bergulat dengan KPR, utang, dan tuntutan hidup modern.
-</p>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
+<h3>Novel Fiksi</h3>
+<p>Novel remaja, romance, misteri, dan fiksi ilmiah.</p>
 </div>
 
-<div class="produk">
-<img src="buku2.jpg" alt="bungkamsuara" width="150">
-<h2>Novel Bungkam Suara</h2>
-<p class="harga">Rp99.000</p>
-<p class="deskripsi">
-Novel karya J.S. Khairen tentang kebebasan berbicara dan perlawanan terhadap kekuasaan yang menindas.
-</p>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+<h3>Buku Motivasi</h3>
+<p>Buku inspiratif seperti Atomic Habits dan lainnya.</p>
 </div>
 
-<div class="produk">
-<img src="buku7.jpg" alt="aqidah" width="150">
-<h2>Syarh Aqidah Washitiyyah</h2>
-<p class="harga">Rp259.000</p>
-<p class="deskripsi">
-Pengantar ilmu akidah Islam yang menjelaskan dasar keimanan berdasarkan Al-Qur'an dan Sunnah.
-</p>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2702/2702134.png">
+<h3>Buku Anak</h3>
+<p>Buku cerita bergambar dan edukasi anak.</p>
 </div>
 
-<div class="produk">
-<img src="buku9.jpg" alt="janji" width="150">
-<h2>Janji - Tere Liye</h2>
-<p class="harga">Rp99.000</p>
-<p class="deskripsi">
-Cerita tentang tiga sahabat yang diuji oleh janji di masa lalu.
-</p>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2436/2436874.png">
+<h3>Buku Referensi</h3>
+<p>Ensiklopedia, kamus, buku pengetahuan umum.</p>
 </div>
 
-<div class="produk">
-<img src="buku11.jpg" alt="beranitidakdisukai" width="150">
-<h2>Berani Tidak Disukai</h2>
-<p class="harga">Rp89.000</p>
-<p class="deskripsi">
-Buku pengembangan diri tentang keberanian menjadi diri sendiri tanpa takut penilaian orang lain.
-</p>
 </div>
 
 </section>
 
-<div class="kembali">
-<a href="index.html">Kembali ke Beranda</a>
-</div>
-
 <footer>
-<p>&copy; 2026 Toko Buku Adara Haibah</p>
+© 2026 Toko Buku Adara Haibah
 </footer>
 
 </body>
 </html>
+
+ini contoh 
