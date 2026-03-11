@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bedah Buku - Toko Buku Adara Haibah</title>
-
 <style>
 body {
     margin: 0;
@@ -25,7 +24,6 @@ nav {
     top: 0;
     z-index: 1000;
 }
-
 nav a {
     text-decoration: none;
     color: white;
@@ -34,7 +32,6 @@ nav a {
     position: relative;
     transition: 0.3s;
 }
-
 nav a::after {
     content: "";
     position: absolute;
@@ -45,29 +42,23 @@ nav a::after {
     background: white;
     transition: 0.3s;
 }
+nav a:hover::after { width: 100%; }
+nav a:hover { transform: scale(1.1); }
 
-nav a:hover::after {
-    width: 100%;
-}
-
-nav a:hover {
-    transform: scale(1.1);
-}
-
-/* JUDUL HALAMAN */
+/* Judul halaman */
 h1 {
     text-align: center;
     color: #ff4fa3;
     margin: 30px 0 20px 0;
 }
 
-/* CARD ARTIKEL / BEDAH BUKU */
+/* Card artikel */
 .daftar-produk {
     display: flex;
-    justify-content: center;
-    padding: 20px;
     flex-direction: column;
+    align-items: center;
     gap: 25px;
+    padding: 20px;
 }
 
 .artikel {
@@ -80,23 +71,13 @@ h1 {
     animation: muncul 0.8s ease;
     transition: transform 0.3s;
 }
+.artikel:hover { transform: translateY(-5px) scale(1.02); }
 
-.artikel:hover {
-    transform: translateY(-5px) scale(1.02);
-}
+/* Judul & penulis */
+.artikel h2 { color: #ff5cad; }
+.penulis { font-style: italic; color: #666; margin-bottom: 10px; }
 
-/* JUDUL & PENULIS */
-.artikel h2 {
-    color: #ff5cad;
-}
-
-.penulis {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-/* GAMBAR BUKU */
+/* Gambar buku */
 .sampul {
     width: 200px;
     display: block;
@@ -104,12 +85,9 @@ h1 {
     border-radius: 12px;
     transition: 0.3s;
 }
+.sampul:hover { transform: scale(1.08) rotate(2deg); }
 
-.sampul:hover {
-    transform: scale(1.08) rotate(2deg);
-}
-
-/* QUOTE */
+/* Blockquote lucu */
 blockquote {
     background: #ffd9ec;
     padding: 15px;
@@ -119,7 +97,7 @@ blockquote {
     margin: 15px 0;
 }
 
-/* TOMBOL KEMBALI */
+/* Tombol kembali */
 .btn-kembali {
     display: inline-block;
     margin-top: 15px;
@@ -130,13 +108,9 @@ blockquote {
     border-radius: 20px;
     transition: 0.3s;
 }
+.btn-kembali:hover { background: #ff7fbf; transform: scale(1.05); }
 
-.btn-kembali:hover {
-    background: #ff7fbf;
-    transform: scale(1.05);
-}
-
-/* FOOTER */
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -145,12 +119,11 @@ footer {
     margin-top: 40px;
 }
 
-/* ANIMASI MUNCUL */
+/* Animasi muncul */
 @keyframes muncul {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
+    from { opacity:0; transform: translateY(30px); }
+    to { opacity:1; transform: translateY(0); }
 }
-
 </style>
 </head>
 <body>
@@ -168,19 +141,17 @@ footer {
 
 <h1>Toko Buku Adara Haibah Z</h1>
 
-<!-- BEDAH BUKU 1 -->
 <section class="daftar-produk"> 
 <main class="artikel">
 <h2>Bedah Buku: Negeri 5 Menara</h2>
 <p class="penulis">Ditulis oleh: Ahmad Fuadi</p>
-<img src="buku8.jpg 5 menara.jpg" alt="Sampul Negeri 5 Menara" class="sampul">
+<img src="buku8.jpg" alt="Sampul Negeri 5 Menara" class="sampul">
 <p>Buku ini menceritakan perjalanan hidup Alif, seorang anak Minang yang menempuh pendidikan di pondok pesantren Madani. Awalnya penuh keraguan, namun perlahan Alif menemukan makna perjuangan, persahabatan, dan kekuatan impian.</p>
 <blockquote>"Man Jadda Wajada - Siapa yang bersungguh-sungguh, dia akan berhasil."</blockquote>
 <p>Kalimat itu menjadi semangat utama dalam buku ini dan sangat menginspirasi pelajar yang sedang mengejar mimpi.</p>
 </main>
 </section>
 
-<!-- BEDAH BUKU 2 -->
 <section class="daftar-produk"> 
 <main class="artikel">
 <h2>Bedah Buku: Novel Janji Tere Liye</h2>
@@ -192,7 +163,6 @@ footer {
 </main>
 </section>
 
-<!-- BEDAH BUKU 3 -->
 <section class="daftar-produk"> 
 <main class="artikel">
 <h2>Bedah Buku: Novel Bungkam Suara</h2>
@@ -200,15 +170,13 @@ footer {
 <img src="buku2.jpg" alt="Sampul Bungkam Suara" class="sampul">
 <p>Buku ini menceritakan tentang perjuangan melawan ketidakadilan dan kekuasaan yang menindas, di mana kebenaran sering kali dibungkam demi kepentingan tertentu. Tokoh-tokohnya dihadapkan pada pilihan sulit antara berani bersuara atau diam demi keselamatan diri.</p>
 <blockquote>"Diam sering kali dipilih demi rasa aman, namun ketika ketidakadilan terus dibiarkan, diam berubah menjadi bentuk persetujuan. Pada titik itulah keberanian bukan lagi pilihan, melainkan kewajiban moral."</blockquote>
-<p>Cerita ini relevan dengan kehidupan nyata dan memberikan refleksi mendalam tentang arti bersuara demi kebenaran.</p>
 <a href="produk.html" class="btn-kembali">Kembali ke Katalog</a>
 </main>
 </section>
 
-<footer> 
+<footer>
 <p>&copy; 2026 Toko Buku Adara Haibah Z</p>
 </footer>
 
 </body>
 </html>
-
